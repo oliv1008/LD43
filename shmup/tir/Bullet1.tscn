@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://shmup/tir/Bullet1.gd" type="Script" id=1]
+[ext_resource path="res://shmup/images/le fell.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 44.0
+
+[node name="Bullet1" type="Node2D"]
+
+position = Vector2( 150, 110 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+speed = 200
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+position = Vector2( -10, -9.99999 )
+scale = Vector2( 2.1875, 6.5625 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
+
+[node name="hitbox" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( -1.90735e-06, 0.0238113 )
+scale = Vector2( 2.46154, 1.00068 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="." index="2"]
+
+position = Vector2( 3.05176e-05, -7.62939e-06 )
+scale = Vector2( 10, 20 )
+rect = Rect2( -10, -10, 20, 20 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+

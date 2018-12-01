@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shmup/ennemies/trashnode.gd" type="Script" id=1]
+[ext_resource path="res://shmup/ennemies/trash.gd" type="Script" id=2]
+[ext_resource path="res://shmup/ennemies/trash.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 70.9686
+
+[node name="trash" type="Node2D"]
+
+script = ExtResource( 1 )
+
+[node name="TimerBullet1" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="poubelle" type="KinematicBody2D" parent="." index="1" groups=[
+"Ennemies",
+]]
+
+position = Vector2( 950, 200 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="hitbox" type="CollisionShape2D" parent="poubelle" index="0"]
+
+position = Vector2( -2.09129, 0.150391 )
+scale = Vector2( 3.37194, 1.0031 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="poubelle" index="1"]
+
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="timeout" from="TimerBullet1" to="." method="_on_TimerBullet1_timeout"]
+
+

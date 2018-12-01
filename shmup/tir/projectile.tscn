@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://shmup/tir/projectile.gd" type="Script" id=1]
+[ext_resource path="res://shmup/images/balle.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0458
+
+[node name="Projectile" type="Node2D"]
+
+position = Vector2( 657.037, 642.306 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+speed = 500
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+position = Vector2( -0.043448, -0.0580546 )
+scale = Vector2( 0.312385, 0.317294 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="hitbox" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0.740967, -0.804688 )
+scale = Vector2( 3.20118, 3.15165 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="." index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[connection signal="screen_exited" from="Visibility" to="." method="_on_Visibility_screen_exited"]
+
+
