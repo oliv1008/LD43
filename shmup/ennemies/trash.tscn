@@ -13,6 +13,7 @@ height = 70.9686
 [node name="trash" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="TimerBullet1" type="Timer" parent="." index="0"]
 
@@ -25,7 +26,6 @@ autostart = false
 "Ennemies",
 ]]
 
-position = Vector2( 950, 200 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -35,6 +35,8 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
+speed = 50
+deplacement = "Sinus"
 
 [node name="hitbox" type="CollisionShape2D" parent="poubelle" index="0"]
 
@@ -48,6 +50,30 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Visibility" type="VisibilityNotifier2D" parent="poubelle" index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+
+[node name="TimerGD" type="Timer" parent="poubelle" index="3"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[node name="TimerFree" type="Timer" parent="poubelle" index="4"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
+
 [connection signal="timeout" from="TimerBullet1" to="." method="_on_TimerBullet1_timeout"]
+
+[connection signal="screen_exited" from="poubelle/Visibility" to="." method="_on_Visibility_screen_exited"]
+
+[connection signal="timeout" from="poubelle/TimerGD" to="poubelle" method="_on_TimerGD_timeout"]
+
+[connection signal="timeout" from="poubelle/TimerFree" to="poubelle" method="_on_TimerFree_timeout"]
 
 

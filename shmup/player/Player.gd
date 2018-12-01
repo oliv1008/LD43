@@ -9,6 +9,5 @@ func _ready():
 func _on_TimerProjec_timeout():
 	var projectile = ProjectileScene.instance()
 	projectile.position = $Voiture.position
-	#projectile.rotation_degrees = 0
 	add_child(projectile)
 	

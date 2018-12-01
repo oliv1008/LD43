@@ -9,13 +9,10 @@
 custom_solver_bias = 0.0
 extents = Vector2( 30, 30 )
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="TimerProjec" type="Timer" parent="." index="0"]
 
@@ -28,7 +25,7 @@ autostart = false
 "Perso",
 ]]
 
-position = Vector2( 950, 900 )
+position = Vector2( 400, 900 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

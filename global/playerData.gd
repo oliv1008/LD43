@@ -9,7 +9,7 @@ var CarParts = {"right_wheel" : true,
 var CarHP = 100
 var Crew = []
 
-
+var nombreATuer = 5
 
 func _ready():
 	randomize()
