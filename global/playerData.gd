@@ -9,12 +9,7 @@ var CarParts = {"right_wheel" : true,
 var CarHP = 100
 var Crew = []
 
-var CompetenceDisponible = ["mechano", "tireur"]
-var ValeurCompetenceDisponible = {"mechano" : [10, 30],
-									"tireur" : [10, 20]}
-var NbCompetence = CompetenceDisponible.size()
-var TraitDeCaracteresDispo = ["bagarreur", "intelligent"]
-var NbTraitDeCaracteresDispo = TraitDeCaracteresDispo.size()
+
 
 func _ready():
 	randomize()
