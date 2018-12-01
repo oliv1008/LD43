@@ -2,13 +2,12 @@
 
 [ext_resource path="res://shmup/ennemies/trashnode.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/trash.gd" type="Script" id=2]
-[ext_resource path="res://shmup/ennemies/trash.png" type="Texture" id=3]
+[ext_resource path="res://shmup/images/Robot_volant1.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.0
-height = 70.9686
+extents = Vector2( 12.6566, 18.3237 )
 
 [node name="trash" type="Node2D"]
 
@@ -26,6 +25,7 @@ autostart = false
 "Ennemies",
 ]]
 
+position = Vector2( 0.583977, 2.04392 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -46,7 +46,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="poubelle" index="1"]
 
-scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
