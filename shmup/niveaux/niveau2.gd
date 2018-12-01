@@ -1,8 +1,10 @@
 extends Node
 
 export (PackedScene) var trash
+export (PackedScene) var trash2
 
 var randomDep = 0
+var randomTrash = 0
 
 
 func _ready():
@@ -18,6 +20,8 @@ func _physics_process(delta):
 func _on_TimerMob_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
 	var my_trash = trash.instance()
+	if randomTrash == 0:
+		 my_trash = trash2.instance()
 	my_trash.get_node("poubelle").spawnPosition = $TrashPath/TrashSpawnLocation.position
 	if randomDep == 0:
 		my_trash.get_node('poubelle').deplacement = "Diagonale"
@@ -38,8 +42,8 @@ func _on_TimerMob_timeout():
 	
 func _on_TimerStylePoubelle_timeout():
 	randomDep = randi() % 6
+	randomTrash = randi() % 3
 	
 func _my_level_was_completed():
 	get_tree().change_scene("res://shmup/niveaux/niveau2.tscn")
 	playerData.nombreATuer = 5
-

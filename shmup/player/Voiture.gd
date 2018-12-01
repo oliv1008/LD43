@@ -4,7 +4,7 @@ export (int) var speed
 var screensize
 var rotDeg = 15
 
-var health = 2
+var health = 50
 
 func _on_hit():
 	health -= 1
