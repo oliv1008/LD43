@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shmup/ennemies/MobShotgunNode.gd" type="Script" id=1]
+[ext_resource path="res://shmup/ennemies/MobShotgun.gd" type="Script" id=2]
+[ext_resource path="res://shmup/images/shotgun.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 23.8908, 50.3528 )
+
+[node name="trash" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TimerBullet" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="poubelle" type="KinematicBody2D" parent="." index="1" groups=[
+"Ennemies",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+speed = 100
+deplacement = "GD"
+
+[node name="hitbox" type="CollisionShape2D" parent="poubelle" index="0"]
+
+position = Vector2( -6.17912, -0.141594 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="poubelle" index="1"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Visibility" type="VisibilityNotifier2D" parent="poubelle" index="2"]
+
+rect = Rect2( -10, -10, 20, 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TimerGD" type="Timer" parent="poubelle" index="3"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[node name="TimerFree" type="Timer" parent="poubelle" index="4"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="TimerBullet" to="." method="_on_TimerBullet_timeout"]
+
+[connection signal="screen_exited" from="poubelle/Visibility" to="." method="_on_Visibility_screen_exited"]
+
+[connection signal="timeout" from="poubelle/TimerGD" to="poubelle" method="_on_TimerGD_timeout"]
+
+[connection signal="timeout" from="poubelle/TimerFree" to="poubelle" method="_on_TimerFree_timeout"]
+
+

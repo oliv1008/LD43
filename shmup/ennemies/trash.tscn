@@ -2,19 +2,19 @@
 
 [ext_resource path="res://shmup/ennemies/trashnode.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/trash.gd" type="Script" id=2]
-[ext_resource path="res://shmup/images/Robot_volant1.png" type="Texture" id=3]
+[ext_resource path="res://shmup/images/biker.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 12.6566, 18.3237 )
+extents = Vector2( 5.9313, 42.0639 )
 
-[node name="trash" type="Node2D"]
+[node name="trash" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TimerBullet1" type="Timer" parent="." index="0"]
+[node name="TimerBullet" type="Timer" parent="." index="0"]
 
 process_mode = 1
 wait_time = 1.0
@@ -32,15 +32,12 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
-speed = 50
-deplacement = "Sinus"
+speed = 100
+deplacement = "GD"
 
 [node name="hitbox" type="CollisionShape2D" parent="poubelle" index="0"]
 
-position = Vector2( -2.09129, 0.150391 )
+position = Vector2( -0.583977, 7.95608 )
 scale = Vector2( 3.37194, 1.0031 )
 shape = SubResource( 1 )
 
@@ -67,7 +64,7 @@ wait_time = 10.0
 one_shot = false
 autostart = false
 
-[connection signal="timeout" from="TimerBullet1" to="." method="_on_TimerBullet1_timeout"]
+[connection signal="timeout" from="TimerBullet" to="." method="_on_TimerBullet_timeout"]
 
 [connection signal="screen_exited" from="poubelle/Visibility" to="." method="_on_Visibility_screen_exited"]
 

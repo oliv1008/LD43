@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://shmup/niveaux/niveau1.gd" type="Script" id=1]
-[ext_resource path="res://shmup/ennemies/trash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://shmup/images/background synthwave.jpg" type="Texture" id=3]
-[ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://shmup/ennemies/MobShotgun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://shmup/ennemies/trash.tscn" type="PackedScene" id=3]
+[ext_resource path="res://shmup/ennemies/trash2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://shmup/ennemies/MobLaser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://shmup/ennemies/MobCanon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://shmup/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Musique/Main Theme Floor It.wav" type="AudioStream" id=10]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -12,29 +18,18 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.55011, -2.09686, 0, 0, 0, 0, 801.957, 2.09064 )
 }
 
-[node name="Niveau1" type="Node"]
+[node name="Niveau1" type="Node" index="0"]
 
 script = ExtResource( 1 )
-trash = ExtResource( 2 )
+MobShotgun = ExtResource( 2 )
+trash = ExtResource( 3 )
+trash2 = ExtResource( 4 )
+MobLaser = ExtResource( 5 )
+MobCanon = ExtResource( 6 )
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="background" parent="." index="0" instance=ExtResource( 7 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1920.0
-margin_bottom = 1080.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 3 )
-stretch_mode = 0
-
-[node name="Player" parent="." index="1" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 8 )]
 
 [node name="TimerMob" type="Timer" parent="." index="2"]
 
@@ -66,6 +61,20 @@ rotate = true
 cubic_interp = true
 loop = true
 lookahead = 4.0
+
+[node name="CanvasLayer" parent="." index="5" instance=ExtResource( 9 )]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="timeout" from="TimerMob" to="." method="_on_TimerMob_timeout"]
 

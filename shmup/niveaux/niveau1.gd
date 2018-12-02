@@ -1,9 +1,14 @@
 extends Node
 
+export (PackedScene) var MobShotgun
 export (PackedScene) var trash
+export (PackedScene) var trash2
+export (PackedScene) var MobLaser
+export (PackedScene) var MobCanon
 
 var randomDep = 0
-
+var randomTrash = 0
+var my_trash
 
 func _ready():
 	randomize()
@@ -17,7 +22,10 @@ func _physics_process(delta):
 
 func _on_TimerMob_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
-	var my_trash = trash.instance()
+	if randomTrash == 0:
+		my_trash = trash2.instance()
+	else:
+		my_trash = trash.instance()
 	my_trash.get_node("poubelle").spawnPosition = $TrashPath/TrashSpawnLocation.position
 	if randomDep == 0:
 		my_trash.get_node('poubelle').deplacement = "Diagonale"
@@ -31,15 +39,21 @@ func _on_TimerMob_timeout():
 		my_trash.get_node('poubelle').deplacement = "Horizontale Gauche"
 	elif randomDep == 5:
 		my_trash.get_node('poubelle').deplacement = "Verticale"
+	elif randomDep == 6:
+		my_trash.get_node('poubelle').deplacement = "Up and Down Gauche"
+	elif randomDep == 7:
+		my_trash.get_node('poubelle').deplacement = "Up and Down Droite"
 		
 	
 	add_child(my_trash)
 
 	
 func _on_TimerStylePoubelle_timeout():
-	randomDep = randi() % 6
+	randomDep = randi() % 8
+	randomTrash = randi() % 2
 	
 func _my_level_was_completed():
-	get_tree().change_scene("res://shmup/niveaux/niveau2.tscn")
-	playerData.nombreATuer = 5
+	$TimerStylePoubelle.stop()
+	get_tree().change_scene("res://shmup/boss/Boss 1.tscn")
+	playerData.nombreATuer = 10
 

@@ -25,6 +25,7 @@ func randomize_new_character():
 	my_character.attaque_value = (randi() % 10) + 1
 	my_character.competence = CompetenceDisponible[randi() % NbCompetence]
 	my_character.competence_value = rand_array(ValeurCompetenceDisponible[my_character.competence])
+	playerData.crew_size += 1
 	return my_character
 	
 func rand_array(array):

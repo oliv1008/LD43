@@ -1,0 +1,258 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gestion/ManagementScreen/CrewStatusScreen/CrewStatusScreen.gd" type="Script" id=1]
+[ext_resource path="res://gestion/ManagementScreen/RobotInfoScreen/RobotInfoScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[node name="CrewStatusScreen" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+RobotInfoScreen = ExtResource( 2 )
+MainScreen = ExtResource( 3 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 799.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 42
+alignment = 1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Label" type="Label" parent="VBoxContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 799.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Crew status"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="VBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 82.0
+margin_right = 799.0
+margin_bottom = 165.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+text = "Click on a portrait to learn more about the robot"
+align = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 49.0
+margin_top = 259.0
+margin_right = 747.0
+margin_bottom = 959.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 317
+alignment = 1
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 698.0
+margin_bottom = 191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 350
+alignment = 1
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Portrait1" type="TextureButton" parent="VBoxContainer/HBoxContainer" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 698.0
+margin_bottom = 191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="portrait2" type="TextureButton" parent="VBoxContainer/HBoxContainer" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 524.0
+margin_right = 698.0
+margin_bottom = 191.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 508.0
+margin_right = 698.0
+margin_bottom = 700.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 350
+alignment = 1
+_sections_unfolded = [ "Size Flags", "custom_constants" ]
+
+[node name="Portrait3" type="TextureButton" parent="VBoxContainer/HBoxContainer2" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 698.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="Portrait4" type="TextureButton" parent="VBoxContainer/HBoxContainer2" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 524.0
+margin_right = 698.0
+margin_bottom = 192.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/portrait2" to="." method="_on_portrait2_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Portrait3" to="." method="_on_Portrait3_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Portrait4" to="." method="_on_Portrait4_pressed"]
+
+

@@ -1,11 +1,14 @@
 extends Node2D
 
-var level
-var attaque_value
-var competence
-var competence_value
+var level = 1
+var attaque_value = 1
+var competence = "vide"
+var competence_value = 1
 var trait_de_caractere = []
-var portrait
+var portrait = preload("res://icon.png")
+var robot_name = "B20-B4"
+var quote = "Bang bang baaaaaang"
+var trait = []
 
 func _ready():
 	pass
@@ -17,8 +20,9 @@ func _ready():
 	
 func display_character():
 	print("----CHARACTER----")
+	print("name = ", robot_name)
 	print("level = ", level)
-	print("attaue_value = ", attaque_value)
+	print("attaque_value = ", attaque_value)
 	print("competence = ", competence)
 	print("competence_value = ", competence_value)
 	print("trait de caractere = ", trait_de_caractere)

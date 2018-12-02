@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://shmup/boss/Boss 1 Node.gd" type="Script" id=1]
+[ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://shmup/boss/Boss1.gd" type="Script" id=3]
+[ext_resource path="res://shmup/images/gros robot.png" type="Texture" id=4]
+[ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://shmup/HUD/HUD Boss.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 207.438, 143.776 )
+
+[node name="Boss 1" type="Node"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="background" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="Boss" type="KinematicBody2D" parent="." index="1" groups=[
+"Ennemies",
+]]
+
+position = Vector2( 439.401, 170.047 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="hitbox" type="CollisionShape2D" parent="Boss" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Boss" index="1"]
+
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TimerFinShotgun" type="Timer" parent="Boss" index="2"]
+
+process_mode = 1
+wait_time = 1.1
+one_shot = true
+autostart = false
+
+[node name="TimerSpirale" type="Timer" parent="Boss" index="3"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = false
+autostart = false
+
+[node name="TimerShotgun" type="Timer" parent="Boss" index="4"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = false
+autostart = false
+
+[node name="TimerDebutShotgun" type="Timer" parent="Boss" index="5"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="TimerBullet" type="Timer" parent="Boss" index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Player" parent="." index="2" instance=ExtResource( 5 )]
+
+[node name="HUD Boss 1" parent="." index="3" instance=ExtResource( 6 )]
+
+[connection signal="timeout" from="Boss/TimerFinShotgun" to="Boss" method="_on_TimerFinShotgun_timeout"]
+
+[connection signal="timeout" from="Boss/TimerSpirale" to="Boss" method="_on_TimerSpirale_timeout"]
+
+[connection signal="timeout" from="Boss/TimerShotgun" to="Boss" method="_on_TimerShotgun_timeout"]
+
+[connection signal="timeout" from="Boss/TimerDebutShotgun" to="Boss" method="_on_TimerDebutShotgun_timeout"]
+
+[connection signal="timeout" from="Boss/TimerBullet" to="Boss" method="_on_TimerBullet_timeout"]
+
+

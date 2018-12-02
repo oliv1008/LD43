@@ -2,7 +2,7 @@
 
 [ext_resource path="res://shmup/ennemies/trashnode2.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/trash2.gd" type="Script" id=2]
-[ext_resource path="res://shmup/images/Voiture_1.png" type="Texture" id=3]
+[ext_resource path="res://shmup/images/Robot_volant1.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,7 +14,7 @@ extents = Vector2( 12.6566, 18.3237 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TimerBullet1" type="Timer" parent="." index="0"]
+[node name="TimerBullet" type="Timer" parent="." index="0"]
 
 process_mode = 1
 wait_time = 1.0
@@ -67,7 +67,7 @@ wait_time = 10.0
 one_shot = false
 autostart = false
 
-[connection signal="timeout" from="TimerBullet1" to="." method="_on_TimerBullet1_timeout"]
+[connection signal="timeout" from="TimerBullet" to="." method="_on_TimerBullet_timeout"]
 
 [connection signal="screen_exited" from="poubelle/Visibility" to="." method="_on_Visibility_screen_exited"]
 

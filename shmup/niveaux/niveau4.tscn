@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://shmup/niveaux/niveau4.gd" type="Script" id=1]
+[ext_resource path="res://shmup/ennemies/trash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://shmup/ennemies/trash2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://shmup/ennemies/MobShotgun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://shmup/ennemies/MobLaser.tscn" type="PackedScene" id=5]
+[ext_resource path="res://shmup/ennemies/MobCanon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://shmup/HUD/HUD.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -0.55011, -2.09686, 0, 0, 0, 0, 801.957, 2.09064 )
+}
+
+[node name="Niveau4" type="Node" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+trash = ExtResource( 2 )
+trash2 = ExtResource( 3 )
+MobShotgun = ExtResource( 4 )
+MobLaser = ExtResource( 5 )
+MobCanon = ExtResource( 6 )
+
+[node name="background" parent="." index="0" instance=ExtResource( 7 )]
+
+[node name="Player" parent="." index="1" instance=ExtResource( 8 )]
+
+[node name="TimerMob" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="TimerStylePoubelle" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
+[node name="TrashPath" type="Path2D" parent="." index="4"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+
+[node name="TrashSpawnLocation" type="PathFollow2D" parent="TrashPath" index="0"]
+
+position = Vector2( -0.55011, -2.09686 )
+rotation = 0.00521794
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="CanvasLayer" parent="." index="5" instance=ExtResource( 9 )]
+
+[connection signal="timeout" from="TimerMob" to="." method="_on_TimerMob_timeout"]
+
+[connection signal="timeout" from="TimerStylePoubelle" to="." method="_on_TimerStylePoubelle_timeout"]
+
+

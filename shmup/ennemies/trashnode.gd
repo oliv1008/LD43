@@ -1,15 +1,17 @@
 extends Node2D
 
-onready var Bullet1Scene = preload("res://shmup/tir/Bullet1.tscn")
+onready var BulletScene = preload("res://shmup/tir/BulletLock.tscn")
 
 func _ready():
 
-	$TimerBullet1.start()
+	$TimerBullet.start()
 	
-func _on_TimerBullet1_timeout():
-	var bullet1 = Bullet1Scene.instance()
-	bullet1.position = $poubelle.position
-	add_child(bullet1)
+func _on_TimerBullet_timeout():
+	var bullet = BulletScene.instance()
+	bullet.position = $poubelle.position
+	bullet.position.x -= 15
+	bullet.position.y += 45
+	add_child(bullet)
 	
 func _on_Visibility_screen_exited():
 	queue_free()

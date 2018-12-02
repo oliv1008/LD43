@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Main Theme Floor It.wav-0653c7466bb655173fbf6a017dae8bd9.sample"
+
+[deps]
+
+source_file="res://Musique/Main Theme Floor It.wav"
+dest_files=[ "res://.import/Main Theme Floor It.wav-0653c7466bb655173fbf6a017dae8bd9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

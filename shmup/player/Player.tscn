@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
+extents = Vector2( 20, 50 )
 
 [node name="Player" type="Node2D"]
 
@@ -36,6 +36,7 @@ speed = 250
 
 [node name="Hitbox" type="CollisionShape2D" parent="Voiture" index="0"]
 
+position = Vector2( 0, 10 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Voiture" index="1"]
