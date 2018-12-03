@@ -21,6 +21,7 @@ var neonLeft = 100
 var crew = []
 var crew_size = 0
 var seats = []
+var seats_size = 0
 var neonRepairModifier = 1
 var neonNextStageModifier = 1
 var neonEarnedModifier = 1
@@ -61,7 +62,9 @@ func _ready():
 
 func remove_robot(robot):
 	robot.remove_from_crew()
-	seats[seats.find(robot)] = null
+	if seats.find(robot) != -1:
+		seats_size -= 1
+		seats[seats.find(robot)] = null
 	crew.remove(crew.find(robot))
 	crew.append(null)
 	crew_size -= 1

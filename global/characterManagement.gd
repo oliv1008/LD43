@@ -25,9 +25,17 @@ func _ready():
 
 func randomize_new_character():
 	var my_character = CharacterScene.instance()
-	my_character.attaque_value = randi() % 10 + 5
+	my_character.attaque_value = randi() % 4 + 10
 	my_character.competence = CompetenceDisponible[randi() % NbCompetence]
 	my_character.competenceDescription = competenceDescription[my_character.competence]
 	playerData.crew_size += 1
 	my_character.add_to_crew()
 	return my_character
+	
+func new_unique_character(name):
+	if name == "B20-B4":
+		pass
+	if name == "D4\/1D GH3T0":
+		pass
+	if name == "R3D3":
+		pass

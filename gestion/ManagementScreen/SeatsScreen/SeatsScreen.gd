@@ -75,6 +75,8 @@ func _on_Button1_pressed():
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	playerData.seats_size += 1
 	playerData.seats[0] = robot_selected
 	robot_selected.add_to_seat1()
 	seatsPortrait[0].texture = robot_selected.portrait
@@ -87,6 +89,8 @@ func _on_Button2_pressed():
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	playerData.seats_size += 1
 	playerData.seats[1] = robot_selected
 	robot_selected.add_to_seat2()
 	seatsPortrait[1].texture = robot_selected.portrait
@@ -99,6 +103,8 @@ func _on_Button3_pressed():
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	playerData.seats_size += 1
 	playerData.seats[2] = robot_selected
 	robot_selected.add_to_seat3()
 	seatsPortrait[2].texture = robot_selected.portrait
@@ -111,6 +117,8 @@ func _on_Button4_pressed():
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	playerData.seats_size += 1
 	playerData.seats[3] = robot_selected
 	robot_selected.add_to_seat4()
 	seatsPortrait[3].texture = robot_selected.portrait

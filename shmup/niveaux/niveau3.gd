@@ -13,7 +13,7 @@ var le_mob
 
 
 func _ready():
-	playerData.nombreATuer = 20
+	playerData.nombreATuer = 1
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()

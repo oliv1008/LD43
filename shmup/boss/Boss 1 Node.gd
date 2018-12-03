@@ -2,6 +2,9 @@ extends Node
 
 var MainManagementScreen = "res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
 
+func _ready():
+	$AnimationPlayer.play("arrivee")
+
 func _physics_process(delta):
 	if playerData.boss1HP <= 0:
 		queue_free()
