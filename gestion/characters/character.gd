@@ -1,6 +1,6 @@
 extends Node2D
 
-var level = 1
+var level = 4
 var base_attaque_value = 1
 var attaque_value = 1
 var competence = "vide"
