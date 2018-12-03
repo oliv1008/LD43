@@ -72,6 +72,10 @@ func remove_robot(robot):
 	crew.append(null)
 	crew_size -= 1
 	
+func level_up_crew():
+	for robot in range(0, crew_size):
+		robot.level_up()
+	
 func playShmupSong():
 	if seats[2] == null:
 		MusicPlayer.playSong("Dj0", 0.1, 0.1, 0)

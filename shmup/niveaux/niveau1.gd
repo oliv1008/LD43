@@ -63,6 +63,7 @@ func _on_TimerStylePoubelle_timeout():
 	randomTrash = randi() % 2
 	
 func _my_level_was_completed():
+	playerData.level_up_crew()
 	$TimerStylePoubelle.stop()
 	if playerData.lanceBoss == true:
 		playerData.niveauFini = false
