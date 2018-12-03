@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://shmup/boss/Boss 3 Node.gd" type="Script" id=1]
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=2]
@@ -13,7 +13,26 @@
 custom_solver_bias = 0.0
 extents = Vector2( 120.599, 160 )
 
-[node name="Boss 3" type="Node"]
+[sub_resource type="Animation" id=2]
+
+resource_name = "arrivee"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Boss:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 395, -200 ), Vector2( 395, 150 ) ]
+}
+
+[node name="Boss 3" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -24,7 +43,7 @@ _sections_unfolded = [ "Pause" ]
 "Ennemies",
 ]]
 
-position = Vector2( 439.401, 170.047 )
+position = Vector2( 395, 150 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -109,6 +128,16 @@ autostart = false
 [node name="Player" parent="." index="2" instance=ExtResource( 6 )]
 
 [node name="HUD Boss 3" parent="." index="3" instance=ExtResource( 7 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/arrivee = SubResource( 2 )
+blend_times = [  ]
 
 [connection signal="timeout" from="Boss/TimerFinShotgun" to="Boss" method="_on_TimerFinShotgun_timeout"]
 

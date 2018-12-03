@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 20.142
 height = 1.45935
 
-[node name="Projectile" type="Node2D" index="0"]
+[node name="Projectile" type="Node2D"]
 
 position = Vector2( 657.037, 642.306 )
 script = ExtResource( 1 )

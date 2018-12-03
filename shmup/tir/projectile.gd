@@ -1,6 +1,7 @@
 extends Node2D
 
 export (int) var speed
+var degats = 1
 
 func _ready():
 	pass
@@ -16,7 +17,7 @@ func _on_Visibility_screen_exited():
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Ennemies"):
-		body._on_hit()
+		body._on_hit(degats)
 		queue_free()
 
 

@@ -15,9 +15,9 @@ func _process(delta):
 #	# Update game logic here.
 	pass
 
-func _on_hit():
-	playerData.boss1HP -= 1
-	if playerData.boss1HP == 0:
+func _on_hit(degats):
+	playerData.boss1HP -= degats
+	if playerData.boss1HP <= 0:
 		$TimerSpirale.stop()
 		$TimerDebutShotgun.stop()
 		$TimerBullet.stop()

@@ -48,7 +48,7 @@ func _ready():
 	CarHPLabel.text = str("Car HP : ", playerData.carHP, "/", playerData.maxCarHP)
 	FuelLeftLabel.text = str("Neon left : ", playerData.neonLeft)
 	CurrentStageLabel.text = str("Stage ", playerData.currentStage, "/5")
-	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", "XXX")
+	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", playerData.baseNeonNextStage * playerData.neonNextStageModifier)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -68,7 +68,11 @@ func _on_Crew_pressed():
 
 
 func _on_FloorItButton_pressed():
-	if playerData.currentStage <= 4:
-		PathToNextLevel = str("res://shmup/niveaux/niveau", playerData.currentStage + 1, ".tscn")
-		get_tree().change_scene(PathToNextLevel)
+	if playerData.currentStage <= 4 and playerData.neonLeft >= playerData.baseNeonNextStage * playerData.neonNextStageModifier:
+		if playerData.seats_size != playerData.crew_size:
+			get_tree().change_scene(PathToSeatsScene)
+		else:
+			playerData.neonLeft -= playerData.baseNeonNextStage * playerData.neonNextStageModifier
+			PathToNextLevel = str("res://shmup/niveaux/niveau", playerData.currentStage + 1, ".tscn")
+			get_tree().change_scene(PathToNextLevel)
 	

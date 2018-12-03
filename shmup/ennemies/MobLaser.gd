@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var health = 5
+var health = 150
 
 export (int) var speed
 export (String) var deplacement
@@ -19,9 +19,9 @@ func _physics_process(delta):
 	position += velocity
 	
 
-func _on_hit():
-	health -= 1
-	if health == 0:
+func _on_hit(degats):
+	health -= degats
+	if health <= 0:
 		$TimerFree.start()
 		$"../TimerBullet".stop()
 		$Sprite.position.x += 2000 

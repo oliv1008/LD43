@@ -13,6 +13,7 @@ var le_mob
 
 
 func _ready():
+	playerData.nombreATuer = 1
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()
@@ -71,7 +72,7 @@ func _on_TimerStylePoubelle_timeout():
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
 	if playerData.lanceBoss == true:
-		playerData.nombreATuer = 5
+		#playerData.nombreATuer = 5
 		playerData.lanceBoss = false
 		playerData.niveauFini = false
 		playerData.playerRef = $Player/Voiture.position

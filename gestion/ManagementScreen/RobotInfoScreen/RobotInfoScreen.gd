@@ -35,7 +35,7 @@ func init(robot):
 	NameLabel.text = robot.robot_name
 	LevelLabel.text = str("Level : ", robot.level)
 	AttaqueLabel.text = str("Damage : ", robot.attaque_value)
-	CompetenceLabel.text = str("Skill : ", robot.competence, " ( + ", robot.competence_value, ")")
+	CompetenceLabel.text = str("Skill : ", robot.competence, " (", robot.competenceDescription, ")")
 	if robot.trait.size() == 0:
 		TraitArray[0].text = "None"
 	else:

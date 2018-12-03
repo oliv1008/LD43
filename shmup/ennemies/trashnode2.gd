@@ -10,10 +10,12 @@ func _on_TimerBullet_timeout():
 	var bullet = BulletScene.instance()
 	bullet.position = $poubelle.position
 	bullet.position.x += 25
+	bullet.speed = 400
 	add_child(bullet)
 	bullet = BulletScene.instance()
 	bullet.position = $poubelle.position
 	bullet.position.x -= 25
+	bullet.speed = 400
 	add_child(bullet)
 	
 func _on_Visibility_screen_exited():
