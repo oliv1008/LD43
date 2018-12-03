@@ -34,7 +34,7 @@ MobCanon = ExtResource( 6 )
 [node name="TimerMob" type="Timer" parent="." index="2"]
 
 process_mode = 1
-wait_time = 1.1
+wait_time = 1.15
 one_shot = false
 autostart = false
 
