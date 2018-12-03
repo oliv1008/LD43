@@ -16,6 +16,7 @@ func _ready():
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()
+	playerData.playShmupSong()
 	
 func _physics_process(delta):
 	if playerData.nombreATuer <= 0:

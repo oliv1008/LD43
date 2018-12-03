@@ -52,16 +52,16 @@ func _physics_process(delta):
 
 		if playerData.carParts["left_wheel"] == false:
 			if velocity.x < 0:
-				velocity.x = float(velocity.x/2)
+				velocity.x = float(velocity.x/10)
 		if playerData.carParts["right_wheel"] == false:
 			if velocity.x > 0:
-				velocity.x = float(velocity.x/2)
+				velocity.x = float(velocity.x/10)
 		if playerData.carParts["engine"] == false:
 			if velocity.y < 0:
-				velocity.y = float(velocity.y/2)
+				velocity.y = float(velocity.y/10)
 		if playerData.carParts["brake"] == false:
 			if velocity.y > 0:
-				velocity.y = float(velocity.y/2)
+				velocity.y = float(velocity.y/10)
 
 		position += velocity
 		position.x = clamp(position.x, 0, screensize.x)

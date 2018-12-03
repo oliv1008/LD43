@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SHMUP Theme Dj=0 (loop).wav-34bf248a799c0d6c7a6edc83674b4a62.sample"
+
+[deps]
+
+source_file="res://Musique/SHMUP Theme Dj=0 (loop).wav"
+dest_files=[ "res://.import/SHMUP Theme Dj=0 (loop).wav-34bf248a799c0d6c7a6edc83674b4a62.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
