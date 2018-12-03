@@ -39,6 +39,7 @@ var LWScrapNeon = playerData.baseLWScrapNeon * playerData.neonEarnedModifier
 var LWRepairNeon = playerData.baseLWRepairNeon * playerData.neonRepairModifier
 var HPScrapNeon = playerData.baseHPScrapNeon * playerData.neonEarnedModifier
 var HPRepairNeon = playerData.baseHPRepairNeon * playerData.neonRepairModifier
+var NeonToNextStage = playerData.baseNeonNextStage * playerData.neonNextStageModifier
 
 func _ready():
 	
@@ -105,6 +106,11 @@ func _on_Robot4_pressed():
 	var Robot4Info = RobotInfoScreen.instance()
 	add_child(Robot4Info)
 	Robot4Info.init(playerData.crew[3])
+	
+func _on_Robot5_pressed():
+	var Robot5Info = RobotInfoScreen.instance()
+	add_child(Robot5Info)
+	Robot5Info.init(playerData.crew[4])
 
 func _on_ScrapButton1_pressed():
 	robot_to_scrap = playerData.crew[0]
@@ -120,6 +126,10 @@ func _on_ScrapButton3_pressed():
 
 func _on_ScrapButton4_pressed():
 	robot_to_scrap = playerData.crew[3]
+	popup()
+	
+func _on_ScrapButton5_pressed():
+	robot_to_scrap = playerData.crew[4]
 	popup()
 	
 func popup():
@@ -142,7 +152,7 @@ func _on_ButtonEngine_pressed():
 		playerData.carParts["engine"] = false
 		playerData.neonLeft += EngineScrapNeon
 	else:
-		if playerData.neonLeft > 10:
+		if playerData.neonLeft >= NeonToNextStage + EngineRepairNeon:
 			playerData.carParts["engine"] = true
 			playerData.neonLeft -= EngineRepairNeon
 	get_tree().reload_current_scene()
@@ -153,7 +163,7 @@ func _on_ButtonClutch_pressed():
 		playerData.carParts["clutch"] = false
 		playerData.neonLeft += ClutchScrapNeon
 	else:
-		if playerData.neonLeft > 10:
+		if playerData.neonLeft > NeonToNextStage + ClutchRepairNeon:
 			playerData.carParts["clutch"] = true
 			playerData.neonLeft -= ClutchRepairNeon
 	get_tree().reload_current_scene()
@@ -164,7 +174,7 @@ func _on_ButtonBrake_pressed():
 		playerData.carParts["brake"] = false
 		playerData.neonLeft += BrakeScrapNeon
 	else:
-		if playerData.neonLeft > 10:
+		if playerData.neonLeft > NeonToNextStage + BrakeRepairNeon:
 			playerData.carParts["brake"] = true
 			playerData.neonLeft -= BrakeRepairNeon
 	get_tree().reload_current_scene()
@@ -175,7 +185,7 @@ func _on_ButtonRW_pressed():
 		playerData.carParts["right_wheel"] = false
 		playerData.neonLeft += RWScrapNeon
 	else:
-		if playerData.neonLeft > 10:
+		if playerData.neonLeft > NeonToNextStage + RWRepairNeon:
 			playerData.carParts["right_wheel"] = true
 			playerData.neonLeft -= RWRepairNeon
 	get_tree().reload_current_scene()
@@ -186,7 +196,7 @@ func _on_ButtonLW_pressed():
 		playerData.carParts["left_wheel"] = false
 		playerData.neonLeft += LWScrapNeon
 	else:
-		if playerData.neonLeft > 10:
+		if playerData.neonLeft > NeonToNextStage + LWRepairNeon:
 			playerData.carParts["left_wheel"] = true
 			playerData.neonLeft -= LWRepairNeon
 	get_tree().reload_current_scene()
@@ -196,11 +206,11 @@ func _on_ButtonScrap_pressed():
 	if playerData.carHP > 10:
 		playerData.carHP -= 10
 		playerData.neonLeft += HPScrapNeon
-	get_tree().reload_current_scene()
+		get_tree().reload_current_scene()
 
 
 func _on_ButtonRepair_pressed():
-	if playerData.neonLeft >= 10 and playerData.carHP <= 90:
+	if playerData.neonLeft >= NeonToNextStage + HPRepairNeon and playerData.carHP <= playerData.maxCarHP - 10:
 		playerData.neonLeft -= HPRepairNeon
 		playerData.carHP += 10
-	get_tree().reload_current_scene()
+		get_tree().reload_current_scene()

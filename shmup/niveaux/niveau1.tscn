@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://shmup/niveaux/niveau1.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/MobShotgun.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://shmup/HUD/HUD.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Musique/Main Theme Floor It.wav" type="AudioStream" id=10]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -18,7 +17,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.55011, -2.09686, 0, 0, 0, 0, 801.957, 2.09064 )
 }
 
-[node name="Niveau1" type="Node"]
+[node name="Niveau1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 MobShotgun = ExtResource( 2 )
@@ -63,18 +62,6 @@ loop = true
 lookahead = 4.0
 
 [node name="CanvasLayer" parent="." index="5" instance=ExtResource( 9 )]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
-
-stream = ExtResource( 10 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [connection signal="timeout" from="TimerMob" to="." method="_on_TimerMob_timeout"]
 

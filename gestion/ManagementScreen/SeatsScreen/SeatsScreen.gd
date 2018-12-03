@@ -26,9 +26,6 @@ var robot_selected
 
 func _ready():
 	for i in range(0, 4):
-		print("playerData.seats = ", playerData.seats)
-		print("playerData.crew = ", playerData.crew)
-		print("seatsPortrait = ", seatsPortrait)
 		if playerData.seats[i] != null:
 			seatsPortrait[i].texture = playerData.crew[playerData.crew.find(playerData.seats[i])].portrait
 		

@@ -72,6 +72,7 @@ func _on_FloorItButton_pressed():
 		if playerData.seats_size != playerData.crew_size:
 			get_tree().change_scene(PathToSeatsScene)
 		else:
+			print("ici")
 			playerData.neonLeft -= playerData.baseNeonNextStage * playerData.neonNextStageModifier
 			PathToNextLevel = str("res://shmup/niveaux/niveau", playerData.currentStage + 1, ".tscn")
 			get_tree().change_scene(PathToNextLevel)
