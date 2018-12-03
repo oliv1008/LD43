@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gestion/ManagementScreen/SeatsScreen/SeatsScreen.gd" type="Script" id=1]
 [ext_resource path="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://button_theme.tres" type="Theme" id=3]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
 [ext_resource path="res://shmup/images/Voiture_vide.png" type="Texture" id=5]
+[ext_resource path="res://cave_story32.tres" type="DynamicFont" id=6]
 
-[node name="SeatsScreen" type="Control"]
+[node name="SeatsScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -25,6 +26,7 @@ MainScreen = ExtResource( 2 )
 
 [node name="ButtonContainer" type="HBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -154,6 +156,7 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="Car" type="TextureRect" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -542,7 +545,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -564,11 +567,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Robot2Container" type="HBoxContainer" parent="MainContainer/Robot12Container" index="1"]
 
@@ -638,7 +642,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -661,7 +665,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
@@ -712,8 +716,6 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 64.0
-margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -755,7 +757,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -777,7 +779,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
@@ -850,7 +852,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -873,7 +875,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 6 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
