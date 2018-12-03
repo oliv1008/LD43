@@ -48,6 +48,7 @@ func remove_from_crew():
 func add_to_seat1():
 	currentSeat = 1
 	damageModifier += 0.2
+	print("on entre : damageModifier = ", damageModifier)
 	reload_attaque_value()
 	
 func add_to_seat2():
@@ -62,7 +63,9 @@ func add_to_seat4():
 func remove_from_seat():
 	if currentSeat == 1:
 		damageModifier -= 0.2
-		reload_attaque_value()
+		print("on sort : damageModifier = ", damageModifier)
+
+	reload_attaque_value()
 		
 func reload_attaque_value():
 	attaque_value = base_attaque_value * damageModifier
@@ -70,6 +73,7 @@ func reload_attaque_value():
 func level_up():
 	level += 1
 	base_attaque_value += 1
+	reload_attaque_value()
 	
 func display_character():
 	print("----CHARACTER----")

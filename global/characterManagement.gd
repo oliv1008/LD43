@@ -58,7 +58,7 @@ func randomize_new_character():
 	var nameRand = randi() % numberOfName
 	my_character.robot_name = nameRobot[nameRand]
 	my_character.quote = quote[my_character.robot_name]
-	my_character.attaque_value = randi() % 4 + 10
+	my_character.base_attaque_value = randi() % 4 + 10
 	my_character.competence = CompetenceDisponible[randi() % NbCompetence]
 	my_character.competenceDescription = competenceDescription[my_character.competence]
 	for i in range(0, randi() % 3 + 1):
@@ -66,6 +66,7 @@ func randomize_new_character():
 		if !my_character.trait.has(trait_a_rajouter):
 			my_character.trait.append(trait_a_rajouter)
 	playerData.crew_size += 1
+	my_character.reload_attaque_value()
 	my_character.add_to_crew()
 	return my_character
 	
@@ -74,7 +75,7 @@ func new_unique_character(name):
 		var my_character = CharacterScene.instance()
 		my_character.robot_name = "B20-B4"
 		my_character.quote = "Bang bang baaaaang"
-		my_character.attaque_value = randi() % 4 + 10
+		my_character.base_attaque_value = randi() % 4 + 10
 		my_character.competence = "Brawler"
 		my_character.competenceDescription = competenceDescription[my_character.competence]
 		for i in range(0, randi() % 3 + 1):
@@ -82,5 +83,6 @@ func new_unique_character(name):
 			if !my_character.trait.has(trait_a_rajouter):
 				my_character.trait.append(trait_a_rajouter)
 		playerData.crew_size += 1
+		my_character.reload_attaque_value()
 		my_character.add_to_crew()
 		return my_character
