@@ -36,12 +36,9 @@ func init(robot):
 	LevelLabel.text = str("Level : ", robot.level)
 	AttaqueLabel.text = str("Damage : ", robot.attaque_value)
 	CompetenceLabel.text = str("Skill : ", robot.competence, " (", robot.competenceDescription, ")")
-	if robot.trait.size() == 0:
-		TraitArray[0].text = "None"
-	else:
-		for i in range(0, robot.trait.size()):
-			TraitArray[i].text = robot.trait[i]
-			TraitArray[0].visible = true
+	for i in range(0, robot.trait.size()):
+		TraitArray[i].visible = true
+		TraitArray[i].text = robot.trait[i]
 	QuoteLabel.text = robot.quote
 	
 func _input(event):
