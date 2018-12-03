@@ -34,6 +34,8 @@ func add_to_crew():
 		scrapModifier += 0.5
 	elif competence == "Greedy":
 		playerData.neonEarnedModifier += 0.1
+	elif competence == "Brawler":
+		damageModifier += 0.4
 		
 func remove_from_crew():
 	if competence == "Tinker":

@@ -180,7 +180,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 30
 alignment = 0
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="Trait" type="Label" parent="MainContainer/TraitCaractereContainer" index="0"]
 
@@ -306,6 +308,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "\" BANG BANG BAAAANG \"
 								-B2O-B4"
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
