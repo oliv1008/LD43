@@ -25,6 +25,16 @@ onready var robotsSkill = [$MainContainer/Robot12Container/Robot1Container/StatI
 var robot_selected
 
 func _ready():
+	print("playerData.seats_size = ", playerData.seats_size)
+	if playerData.seats_size == 0:
+		$Car.texture = load("res://shmup/images/Voiture_1.png")
+	elif playerData.seats_size == 1:
+		$Car.texture = load("res://shmup/images/Voiture_2.png")
+	elif playerData.seats_size == 2:
+		$Car.texture = load("res://shmup/images/Voiture_3.png")
+	elif playerData.seats_size >= 3:
+		$Car.texture = load("res://shmup/images/Voiture_4.png")
+	
 	for i in range(0, 4):
 		if playerData.seats[i] != null:
 			seatsPortrait[i].texture = playerData.crew[playerData.crew.find(playerData.seats[i])].portrait
@@ -68,55 +78,67 @@ func _on_Portrait4_pressed():
 
 func _on_Button1_pressed():
 	var index_seat_robot_selected = playerData.seats.find(robot_selected)
-	if index_seat_robot_selected != -1 and index_seat_robot_selected != 0:
+	if index_seat_robot_selected != -1:
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	if playerData.seats[0] != null:
 		playerData.seats_size -= 1
 	playerData.seats_size += 1
 	playerData.seats[0] = robot_selected
 	robot_selected.add_to_seat1()
 	seatsPortrait[0].texture = robot_selected.portrait
 	$ButtonContainer.visible = false
+	get_tree().reload_current_scene()
 
 
 func _on_Button2_pressed():
 	var index_seat_robot_selected = playerData.seats.find(robot_selected)
-	if index_seat_robot_selected != -1 and index_seat_robot_selected != 1:
+	if index_seat_robot_selected != -1:
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	if playerData.seats[1] != null:
 		playerData.seats_size -= 1
 	playerData.seats_size += 1
 	playerData.seats[1] = robot_selected
 	robot_selected.add_to_seat2()
 	seatsPortrait[1].texture = robot_selected.portrait
 	$ButtonContainer.visible = false
+	get_tree().reload_current_scene()
 
 
 func _on_Button3_pressed():
 	var index_seat_robot_selected = playerData.seats.find(robot_selected)
-	if index_seat_robot_selected != -1 and index_seat_robot_selected != 2:
+	if index_seat_robot_selected != -1:
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	if playerData.seats[2] != null:
 		playerData.seats_size -= 1
 	playerData.seats_size += 1
 	playerData.seats[2] = robot_selected
 	robot_selected.add_to_seat3()
 	seatsPortrait[2].texture = robot_selected.portrait
 	$ButtonContainer.visible = false
+	get_tree().reload_current_scene()
 
 
 func _on_Button4_pressed():
 	var index_seat_robot_selected = playerData.seats.find(robot_selected)
-	if index_seat_robot_selected != -1 and index_seat_robot_selected != 3:
+	if index_seat_robot_selected != -1:
 		playerData.seats[index_seat_robot_selected].remove_from_seat()
 		seatsPortrait[index_seat_robot_selected].texture = null
 		playerData.seats[index_seat_robot_selected] = null
+		playerData.seats_size -= 1
+	if playerData.seats[3] != null:
 		playerData.seats_size -= 1
 	playerData.seats_size += 1
 	playerData.seats[3] = robot_selected
 	robot_selected.add_to_seat4()
 	seatsPortrait[3].texture = robot_selected.portrait
 	$ButtonContainer.visible = false
+	get_tree().reload_current_scene()
