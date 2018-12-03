@@ -19,7 +19,7 @@ func _ready():
 
 	tie.buff_text("You are hearing Madonna on the radio.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("One of your travel mate asks you to change the music\n", 0.03)
+	tie.buff_text("One of your travel mate asks you to change the music.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
@@ -88,8 +88,8 @@ func _on_Choice1_pressed():
 	if state < 2:
 		tie.buff_clear()
 		tie.buff_text("The music stop.\n", 0.03)
-		tie.buff_text("No one is having fun anymore, poor DJ in the back\n", 0.03)
-		tie.buff_text("You lose 20 Neon\n", 0.03)
+		tie.buff_text("No one is having fun anymore, poor DJ in the back.\n", 0.03)
+		tie.buff_text("You lose 20 Neon.\n", 0.03)
 		playerData.neonLeft -= 20
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
@@ -139,7 +139,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("The music doctorant calmed everyone\n", 0.03)
+	tie.buff_text("The music doctorant calmed everyone.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("The calm in the car made you earn 40 Neon.\n", 0.03)
 	playerData.neonLeft += 40

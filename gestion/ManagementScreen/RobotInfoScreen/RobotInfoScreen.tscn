@@ -4,7 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=3]
 
-[node name="RobotInfoScreen" type="Control"]
+[node name="RobotInfoScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -188,7 +188,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 165.0
+margin_right = 140.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -197,7 +197,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
-text = "TRAIT :"
+text = "Trait : "
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -209,8 +209,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 169.0
-margin_right = 373.0
+margin_left = 144.0
+margin_right = 348.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

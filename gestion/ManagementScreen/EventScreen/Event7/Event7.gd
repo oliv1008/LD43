@@ -86,7 +86,7 @@ func _on_Choice1_pressed():
 	if state < 2:
 		tie.buff_clear()
 		tie.buff_text("You're a dickhead.\n", 0.03)
-		tie.buff_text("Nothing happens\n", 0.03)
+		tie.buff_text("Nothing happens.\n", 0.03)
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
 		choice1Button.visible = false
@@ -100,8 +100,8 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("Your heroism enables you to save a robot\n", 0.03)
-	tie.buff_text("He joins your crew\n", 0.03)
+	tie.buff_text("Your heroism enables you to save a robot.\n", 0.03)
+	tie.buff_text("He joins your crew.\n", 0.03)
 	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
@@ -113,7 +113,7 @@ func _on_Choice2_pressed():
 
 func _on_Choice3_pressed():
 	tie.buff_clear()
-	tie.buff_text("That sounded like a shitty idea but it is actually kind of funny\n", 0.03)
+	tie.buff_text("That sounded like a shitty idea but it is actually kind of funny.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("Everyone laugh, you win 20 Neon.\n", 0.03)
 	playerData.neonLeft += 20
@@ -127,7 +127,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("No shit Sherlock, nothing happens\n", 0.03)
+	tie.buff_text("No shit Sherlock, nothing happens.\n", 0.03)
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false

@@ -86,7 +86,7 @@ func _on_Choice1_pressed():
 	if state < 2:
 		tie.buff_clear()
 		tie.buff_text("Uuuh bad idea, you wounded someone.\n", 0.03)
-		tie.buff_text("You had to pay 20 Neon to pay the insurrance costs\n", 0.03)
+		tie.buff_text("You had to pay 20 Neon to pay the insurrance costs.\n", 0.03)
 		playerData.neonLeft -= 20
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
@@ -102,7 +102,7 @@ func _on_Choice1_pressed():
 func _on_Choice2_pressed():
 	tie.buff_clear()
 	tie.buff_text("They start screaming MACRON DEMISSION with you.\n", 0.03)
-	tie.buff_text("They let you pass and give you 40 Neon for your loyalty\n", 0.03)
+	tie.buff_text("They let you pass and give you 40 Neon for your loyalty.\n", 0.03)
 	playerData.neonLeft += 40
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
@@ -114,7 +114,7 @@ func _on_Choice2_pressed():
 
 func _on_Choice3_pressed():
 	tie.buff_clear()
-	tie.buff_text("You won against a 9 inch tall bodybuilder\n", 0.03)
+	tie.buff_text("You won against a 9 inch tall bodybuilder.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("One of the yellow vest starts to follow you, you won a mate.\n", 0.03)
 	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
@@ -128,7 +128,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("They're happy to get some help and give you 40 Neon\n", 0.03)
+	tie.buff_text("They're happy to get some help and give you 40 Neon.\n", 0.03)
 	playerData.neonLeft += 40
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false

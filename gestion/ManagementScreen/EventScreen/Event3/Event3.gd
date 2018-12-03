@@ -87,8 +87,8 @@ func _on_tag_buff(s):
 func _on_Choice1_pressed():
 	if state < 2:
 		tie.buff_clear()
-		tie.buff_text("Everyone is happy after the little pee break\n", 0.03)
-		tie.buff_text("The happiness flowing in the air made you win 20 Neon\n", 0.03)
+		tie.buff_text("Everyone is happy after the little pee break.\n", 0.03)
+		tie.buff_text("The happiness flowing in the air made you win 20 Neon.\n", 0.03)
 		playerData.neonLeft += 20
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
@@ -103,7 +103,7 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("You don't stop, nothing happens\n", 0.03)
+	tie.buff_text("You don't stop, nothing happens.\n", 0.03)
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false
@@ -128,7 +128,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("The boulimic robot vomits in your care\n", 0.03)
+	tie.buff_text("The boulimic robot vomits in your care.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("You had to use 40 Neon to wash the car.\n", 0.03)
 	playerData.neonLeft -= 40

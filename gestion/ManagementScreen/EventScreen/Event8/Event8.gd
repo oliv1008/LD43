@@ -103,7 +103,7 @@ func _on_Choice1_pressed():
 func _on_Choice2_pressed():
 	tie.buff_clear()
 	tie.buff_text("You're right kiddo. Drugs are bad.\n", 0.03)
-	tie.buff_text("The black dude gives you 10 Neon for being a good kid\n", 0.03)
+	tie.buff_text("The black dude gives you 10 Neon for being a good kid.\n", 0.03)
 	playerData.neonLeft -= 10
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
