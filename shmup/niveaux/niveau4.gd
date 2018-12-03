@@ -13,7 +13,7 @@ var my_trash
 
 
 func _ready():
-	playerData.nombreATuer = 1
+	playerData.nombreATuer = 30
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()

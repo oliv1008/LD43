@@ -118,7 +118,11 @@ func _on_Choice3_pressed():
 	tie.buff_text("Hey, you're fan of B20-B4 !!!\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("B20-B4 appears behind you and join your crew.\n", 0.03)
-	playerData.crew[playerData.crew_size] = characterManagement.new_unique_character("B2O-B4")
+	if playerData.crew_size == 5:
+		playerData.crew[playerData.crew_size-1] = characterManagement.new_unique_character("B2O-B4")
+		tie.buff_text("But your crew is full, so B20-B4 kills one of them.\n", 0.03)
+	else:
+		playerData.crew[playerData.crew_size] = characterManagement.new_unique_character("B2O-B4")
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false
@@ -132,7 +136,11 @@ func _on_Choice4_pressed():
 	tie.buff_text("The black dude loves your rap !\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("He joins your crew.\n", 0.03)
-	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
+	if playerData.crew_size == 5:
+		playerData.crew[playerData.crew_size-1] = characterManagement.randomize_new_character()
+		tie.buff_text("But your crew is full, so the black dude kills one of them.\n", 0.03)
+	else:
+		playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false

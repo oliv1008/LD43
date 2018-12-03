@@ -2,11 +2,11 @@ extends Node2D
 
 var playerRef
 
-var boss1HP = 100
+var boss1HP = 5000
 var maxboss1HP = 5000
-var boss2HP = 100
+var boss2HP = 10000
 var maxboss2HP = 10000
-var boss3HP = 150
+var boss3HP = 15000
 var maxboss3HP = 15000
 
 #Indique l'état des parties de la voiture
@@ -74,7 +74,7 @@ func remove_robot(robot):
 	
 func level_up_crew():
 	for robot in range(0, crew_size):
-		robot.level_up()
+		crew[robot].level_up()
 	
 func playShmupSong():
 	if seats[2] == null:
