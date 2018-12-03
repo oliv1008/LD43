@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LD43"
-run/main_scene="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
+run/main_scene="res://gestion/IntroMenu/IntroMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
