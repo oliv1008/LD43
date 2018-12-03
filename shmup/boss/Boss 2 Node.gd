@@ -13,5 +13,5 @@ func _physics_process(delta):
 func _my_level_was_completed():
 	#playerData.nombreATuer = 5
 	playerData.currentStage += 1
-	get_tree().change_scene(MainManagementScreen)
+	get_tree().change_scene("res://gestion/ManagementScreen/EventScreen/Event7/Event7.tscn")
 
