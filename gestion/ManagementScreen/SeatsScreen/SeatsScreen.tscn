@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gestion/ManagementScreen/SeatsScreen/SeatsScreen.gd" type="Script" id=1]
 [ext_resource path="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn" type="PackedScene" id=2]
-[ext_resource path="res://cave_story64.tres" type="DynamicFont" id=3]
-[ext_resource path="res://shmup/images/Voiture_vide.png" type="Texture" id=4]
+[ext_resource path="res://button_theme.tres" type="Theme" id=3]
+[ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
+[ext_resource path="res://shmup/images/Voiture_vide.png" type="Texture" id=5]
 
 [node name="SeatsScreen" type="Control"]
 
@@ -59,15 +60,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "1"
-flat = false
+flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="Button2" type="Button" parent="ButtonContainer" index="1"]
 
@@ -85,15 +87,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "2"
-flat = false
+flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="Button3" type="Button" parent="ButtonContainer" index="2"]
 
@@ -111,15 +114,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "3"
-flat = false
+flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="Button4" type="Button" parent="ButtonContainer" index="3"]
 
@@ -137,15 +141,16 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 3 )
+theme = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "4"
-flat = false
+flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="Car" type="TextureRect" parent="." index="1"]
 
@@ -163,7 +168,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 6
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
@@ -220,7 +225,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "1"
 percent_visible = 1.0
 lines_skipped = 0
@@ -280,7 +285,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "2"
 percent_visible = 1.0
 lines_skipped = 0
@@ -340,7 +345,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "3"
 percent_visible = 1.0
 lines_skipped = 0
@@ -400,7 +405,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "4"
 percent_visible = 1.0
 lines_skipped = 0
@@ -423,7 +428,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "Seat 1 : +20% 
 	damage
 Seat 3 : DJ"
@@ -537,7 +542,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -559,7 +564,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
@@ -633,7 +638,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -656,7 +661,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
@@ -750,7 +755,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -772,7 +777,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0
@@ -845,7 +850,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "DAMAGE"
 percent_visible = 1.0
 lines_skipped = 0
@@ -868,7 +873,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "SKILL"
 percent_visible = 1.0
 lines_skipped = 0

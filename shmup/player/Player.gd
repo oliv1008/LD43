@@ -24,7 +24,6 @@ func _on_TimerProjec_timeout():
 		projectile.degats = playerData.seats[0].attaque_value
 		projectile.position.x += 28
 		projectile.position.y -= 10
-		nbRobot += 1
 		add_child(projectile)
 	if playerData.seats[1] != null:
 		projectile = ProjectileScene.instance()
@@ -32,19 +31,18 @@ func _on_TimerProjec_timeout():
 		projectile.degats = playerData.seats[1].attaque_value
 		projectile.position.x -= 30
 		projectile.position.y += 10
-		nbRobot += 1
 		add_child(projectile)
 	if playerData.seats[2] != null:
-		nbRobot += 1
+		pass
 	if playerData.seats[3] != null:
 		projectile = ProjectileScene.instance()
 		projectile.position = $Voiture.position
 		projectile.degats = playerData.seats[3].attaque_value 
 		projectile.position.x += 15
 		projectile.position.y += 10
-		nbRobot += 1
 		add_child(projectile)
-		
+	
+	nbRobots = playerData.seats_size
 	if nbRobot == 0:
 		$Voiture/Sprite.texture = voitureA1
 	if nbRobot == 1:

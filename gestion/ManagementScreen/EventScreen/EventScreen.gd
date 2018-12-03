@@ -48,3 +48,11 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	pass # replace with function body
+
+
+func _on_Choice3_pressed():
+	pass # replace with function body
+
+
+func _on_Choice4_pressed():
+	pass # replace with function body

@@ -10,7 +10,9 @@ var competenceDescription = {"Tinker" : "-20% to repair cost", \
 							"Biodegradable" : "+50% neon earned when scraped", \
 							"Greedy" : "+10% to earned scrap"}
 var NbCompetence = CompetenceDisponible.size()
-var TraitDeCaracteresDispo = ["bagarreur", "intelligent"]
+var TraitDeCaracteresDispo = ["Gambler", "Insane dancer", "language doc", "Countryman", "Anarchist", "Soundcloud rapper", "Boulimic", \
+							"Firefighter", "Childish", "Pro poker player", "Music doc", "Nice guy", "Scooby-doo fan", "Wrestler", "Love to fight", "bold", \
+							"Happy", "Dumb", "Grumpy", "Sleepy", "Dopey", "Bashful", "Sneazy"]
 var NbTraitDeCaracteresDispo = TraitDeCaracteresDispo.size()
 
 func _ready():

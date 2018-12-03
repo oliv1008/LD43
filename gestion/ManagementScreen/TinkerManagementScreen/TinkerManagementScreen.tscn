@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gestion/ManagementScreen/TinkerManagementScreen/TinkerManagementScreen.gd" type="Script" id=1]
 [ext_resource path="res://gestion/ManagementScreen/RobotInfoScreen/RobotInfoScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://button_theme.tres" type="Theme" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
 
-[node name="TinkerManagementScreen" type="Control"]
+[node name="TinkerManagementScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -68,7 +69,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="CarPartsContainer" type="VBoxContainer" parent="MainContainer" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -140,6 +140,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -148,7 +149,7 @@ group = null
 text = "SCRAP/REPAIR (-XX)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ClutchContainer" type="HBoxContainer" parent="MainContainer/CarPartsContainer" index="1"]
 
@@ -205,6 +206,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -213,7 +215,7 @@ group = null
 text = "SCRAP/REPAIR (-XX)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="BrakeContainer" type="HBoxContainer" parent="MainContainer/CarPartsContainer" index="2"]
 
@@ -270,6 +272,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -278,7 +281,7 @@ group = null
 text = "SCRAP/REPAIR (-XX)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="RightWheelContainer" type="HBoxContainer" parent="MainContainer/CarPartsContainer" index="3"]
 
@@ -335,6 +338,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -343,7 +347,7 @@ group = null
 text = "SCRAP/REPAIR (-XX)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="LeftWheelContainer" type="HBoxContainer" parent="MainContainer/CarPartsContainer" index="4"]
 
@@ -400,6 +404,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -408,7 +413,7 @@ group = null
 text = "SCRAP/REPAIR (-XX)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="HPContainer" type="VBoxContainer" parent="MainContainer/CarPartsContainer" index="5"]
 
@@ -514,6 +519,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -522,7 +528,7 @@ group = null
 text = "Scrap 10 (+10)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ButtonRepair" type="Button" parent="MainContainer/CarPartsContainer/HPContainer/CenterContainer2/HBoxContainer" index="1"]
 
@@ -540,6 +546,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -548,11 +555,10 @@ group = null
 text = "Repair 10 (-10)"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ScrapContainer" type="VBoxContainer" parent="MainContainer" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -606,7 +612,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="Robot2" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="1"]
@@ -630,7 +636,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 stretch_mode = 4
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
@@ -655,7 +661,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="Robot4" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="3"]
@@ -679,12 +685,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
 [node name="ScrapButtonsContainer" type="HBoxContainer" parent="MainContainer/ScrapContainer" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -717,6 +722,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -725,7 +731,7 @@ group = null
 text = "Scrap"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ScrapButton2" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="1"]
 
@@ -744,6 +750,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -752,7 +759,7 @@ group = null
 text = "Scrap"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ScrapButton3" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="2"]
 
@@ -771,6 +778,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -779,7 +787,7 @@ group = null
 text = "Scrap"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="ScrapButton4" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="3"]
 
@@ -798,6 +806,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -806,7 +815,7 @@ group = null
 text = "Scrap"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="DialogueContainer" type="VBoxContainer" parent="MainContainer" index="3"]
 
@@ -904,6 +913,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -912,7 +922,7 @@ group = null
 text = "Yes"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="No" type="Button" parent="MainContainer/DialogueContainer/ConfirmationButtonsContainer" index="1"]
 
@@ -930,6 +940,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 5 )
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -938,7 +949,7 @@ group = null
 text = "No"
 flat = true
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [connection signal="pressed" from="MainContainer/CarPartsContainer/EngineContainer/ButtonEngine" to="." method="_on_ButtonEngine_pressed"]
 
