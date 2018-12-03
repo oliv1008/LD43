@@ -11,6 +11,7 @@ func _on_TimerBullet_timeout():
 	bullet.position = $poubelle.position
 	bullet.position.x -= 15
 	bullet.position.y += 45
+	bullet.speed = 450
 	add_child(bullet)
 	
 func _on_Visibility_screen_exited():

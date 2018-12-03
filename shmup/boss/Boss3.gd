@@ -20,9 +20,9 @@ func _process(delta):
 #	# Update game logic here.
 	pass
 
-func _on_hit():
-	playerData.boss3HP -= 1
-	if playerData.boss3HP == 0:
+func _on_hit(degats):
+	playerData.boss3HP -= degats
+	if playerData.boss3HP <= 0:
 		$TimerSpirale.stop()
 		$TimerDebutShotgun.stop()
 		$TimerBullet.stop()
@@ -101,6 +101,8 @@ func _on_TimerBullet_timeout():
 func _on_TimerMob_timeout():
 	my_trash = MobLaser.instance()
 	my_trash.position = Vector2(50-randi() % 200,0)
+	my_trash.get_node("poubelle").health = 70
+	my_trash.get_node("poubelle").speed = 150
 	add_child(my_trash)
 
 func _on_TimerPluie_timeout():

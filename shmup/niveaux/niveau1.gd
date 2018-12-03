@@ -12,6 +12,7 @@ var my_trash
 var le_mob
 
 func _ready():
+	playerData.nombreATuer = 20
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()
@@ -29,8 +30,10 @@ func _on_TimerMob_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
 	if le_mob <= 3:
 		my_trash = trash.instance()
+		#my_trash.get_node("poubelle").health = 50
 	if le_mob > 3:
 		my_trash = trash2.instance()
+		#my_trash.get_node("poubelle").health = 70
 	my_trash.get_node("poubelle").spawnPosition = $TrashPath/TrashSpawnLocation.position
 	if randomDep == 0:
 		my_trash.get_node('poubelle').deplacement = "Diagonale"
@@ -61,7 +64,6 @@ func _on_TimerStylePoubelle_timeout():
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
 	if playerData.lanceBoss == true:
-		playerData.nombreATuer = 5
 		playerData.niveauFini = false
 		playerData.lanceBoss = false
 		playerData.playerRef = $Player/Voiture.position

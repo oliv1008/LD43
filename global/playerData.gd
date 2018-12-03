@@ -2,12 +2,12 @@ extends Node2D
 
 var playerRef
 
-var boss1HP = 100
-var maxboss1HP = 200
-var boss2HP = 40
-var maxboss2HP = 400
-var boss3HP = 60
-var maxboss3HP = 600
+var boss1HP = 5000
+var maxboss1HP = 5000
+var boss2HP = 10000
+var maxboss2HP = 10000
+var boss3HP = 15000
+var maxboss3HP = 15000
 
 #Indique l'état des parties de la voiture
 var carParts = {"right_wheel" : true,
@@ -21,9 +21,26 @@ var neonLeft = 100
 var crew = []
 var crew_size = 0
 var seats = []
+var neonRepairModifier = 1
+var neonNextStageModifier = 1
+var neonEarnedModifier = 1
+
+var baseEngineRepairNeon = 15
+var baseEngineScrapNeon = 10
+var baseBrakeRepairNeon = 7
+var baseBrakeScrapNeon = 5
+var baseClutchRepairNeon = 6
+var baseClutchScrapNeon = 4
+var baseRWRepairNeon = 12
+var baseRWScrapNeon = 9
+var baseLWRepairNeon = 12
+var baseLWScrapNeon = 9
+var baseHPRepairNeon = 10
+var baseHPScrapNeon = 10
+var baseNeonNextStage = 100
 
 var currentStage = 0
-var nombreATuer = 1
+var nombreATuer = 0
 var niveauFini = false 
 var lanceBoss = false 
 
@@ -43,6 +60,7 @@ func _ready():
 #	pass
 
 func remove_robot(robot):
+	robot.remove_from_crew()
 	seats[seats.find(robot)] = null
 	crew.remove(crew.find(robot))
 	crew.append(null)

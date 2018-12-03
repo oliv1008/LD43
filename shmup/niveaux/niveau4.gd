@@ -13,6 +13,7 @@ var my_trash
 
 
 func _ready():
+	playerData.nombreATuer = 20
 	randomize()
 	$TimerMob.start()
 	$TimerStylePoubelle.start()
@@ -69,4 +70,4 @@ func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
 	playerData.currentStage += 1
 	get_tree().change_scene(MainManagementScreen)
-	playerData.nombreATuer = 5
+	#playerData.nombreATuer = 5

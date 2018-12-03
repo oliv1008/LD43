@@ -23,7 +23,7 @@ _sections_unfolded = [ "Pause" ]
 "Ennemies",
 ]]
 
-position = Vector2( 439.401, 170.047 )
+position = Vector2( 395, 150 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

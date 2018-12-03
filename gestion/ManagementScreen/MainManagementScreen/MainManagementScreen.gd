@@ -44,7 +44,7 @@ func _ready():
 	CarHPLabel.text = str("Car HP : ", playerData.carHP, "/", playerData.maxCarHP)
 	FuelLeftLabel.text = str("Neon left : ", playerData.neonLeft)
 	CurrentStageLabel.text = str("Stage ", playerData.currentStage, "/5")
-	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", "XXX")
+	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", playerData.baseNeonNextStage * playerData.neonNextStageModifier)
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
