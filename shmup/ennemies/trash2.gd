@@ -34,21 +34,6 @@ func _ready():
 		
 func _physics_process(delta):
 	velocity = Vector2()
-	if deplacement == "Diagonale":
-		velocity.y += 1
-		velocity.x += 1
-		speed = 100
-	if deplacement == "GD":
-		velocity.y += 1
-		velocity.x += GD
-		speed = 50
-	if deplacement == "Sinus":
-		a += cosSpeed
-		position.x = ampC*cos(a) + spawnPosition.x
-		position.y += 1
-		velocity = Vector2(0,0)
-	if deplacement == "Verticale":
-		velocity.y += 1
 	if deplacement == "Horizontale Gauche":
 		velocity.x += 1
 	if deplacement == "Horizontale Droite":

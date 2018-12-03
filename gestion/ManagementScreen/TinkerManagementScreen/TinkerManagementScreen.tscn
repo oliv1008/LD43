@@ -6,7 +6,7 @@
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 
-[node name="TinkerManagementScreen" type="Control" index="0"]
+[node name="TinkerManagementScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -238,7 +238,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 3.0
-margin_right = 135.0
+margin_right = 157.0
 margin_bottom = 43.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -247,7 +247,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
-text = "Brake"
+text = "Brake :"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -259,8 +259,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 139.0
-margin_right = 623.0
+margin_left = 161.0
+margin_right = 645.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

@@ -10,6 +10,7 @@ func _ready():
 	$TimerDebutShotgun.start()
 	$TimerBullet.start()
 	$TimerMob.start()
+	$".."/Player/Voiture.position = playerData.playerRef
 	
 
 func _process(delta):

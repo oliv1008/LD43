@@ -9,6 +9,7 @@ export (PackedScene) var MobCanon
 var randomDep = 0
 var randomTrash = 0
 var my_trash
+var le_mob
 
 func _ready():
 	randomize()
@@ -16,16 +17,20 @@ func _ready():
 	$TimerStylePoubelle.start()
 	
 func _physics_process(delta):
-	if playerData.nombreATuer == 0:
+	if playerData.nombreATuer <= 0:
+		$TimerMob.stop()
+		get_tree().call_group("Ennemies", "queue_free")
+		playerData.niveauFini = true
 		_my_level_was_completed()
+	
 
 
 func _on_TimerMob_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
-	if randomTrash == 0:
-		my_trash = trash2.instance()
-	else:
+	if le_mob <= 3:
 		my_trash = trash.instance()
+	if le_mob > 3:
+		my_trash = trash2.instance()
 	my_trash.get_node("poubelle").spawnPosition = $TrashPath/TrashSpawnLocation.position
 	if randomDep == 0:
 		my_trash.get_node('poubelle').deplacement = "Diagonale"
@@ -33,11 +38,11 @@ func _on_TimerMob_timeout():
 		my_trash.get_node('poubelle').deplacement = "GD"
 	elif randomDep == 2:
 		my_trash.get_node('poubelle').deplacement = "Sinus"
-	elif randomDep == 3:
+	elif randomDep == 5:
 		my_trash.get_node('poubelle').deplacement = "Horizontale Droite"
 	elif randomDep == 4:
 		my_trash.get_node('poubelle').deplacement = "Horizontale Gauche"
-	elif randomDep == 5:
+	elif randomDep == 3:
 		my_trash.get_node('poubelle').deplacement = "Verticale"
 	elif randomDep == 6:
 		my_trash.get_node('poubelle').deplacement = "Up and Down Gauche"
@@ -50,10 +55,15 @@ func _on_TimerMob_timeout():
 	
 func _on_TimerStylePoubelle_timeout():
 	randomDep = randi() % 8
+	le_mob = randomDep
 	randomTrash = randi() % 2
 	
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
-	get_tree().change_scene("res://shmup/boss/Boss 1.tscn")
-	playerData.nombreATuer = 10
+	if playerData.lanceBoss == true:
+		playerData.nombreATuer = 5
+		playerData.niveauFini = false
+		playerData.lanceBoss = false
+		playerData.playerRef = $Player/Voiture.position
+		get_tree().change_scene("res://shmup/boss/Boss 1.tscn")
 

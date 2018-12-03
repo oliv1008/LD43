@@ -17,5 +17,6 @@ func _on_TimerBullet_timeout():
 	add_child(bullet)
 	
 func _on_Visibility_screen_exited():
-	queue_free()
+	$poubelle/TimerFree.start()
+	$TimerBullet.stop()
 	

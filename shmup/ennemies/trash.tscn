@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 5.9313, 42.0639 )
 
-[node name="trash" type="Node2D" index="0"]
+[node name="trash" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -32,8 +32,8 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-speed = 100
-deplacement = "GD"
+speed = 300
+deplacement = "Horizontale Droite"
 
 [node name="hitbox" type="CollisionShape2D" parent="poubelle" index="0"]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 var playerRef
 
-var boss1HP = 20
+var boss1HP = 100
 var maxboss1HP = 200
 var boss2HP = 40
 var maxboss2HP = 400
@@ -21,9 +21,11 @@ var neonLeft = 100
 var crew = []
 var crew_size = 0
 var seats = []
-var currentStage = 1
 
-var nombreATuer = 5
+var currentStage = 0
+var nombreATuer = 1
+var niveauFini = false 
+var lanceBoss = false 
 
 func _ready():
 	for i in range(0, 4):
@@ -41,7 +43,7 @@ func _ready():
 #	pass
 
 func remove_robot(robot):
-	seats[seats.find(robot)] = 0
+	seats[seats.find(robot)] = null
 	crew.remove(crew.find(robot))
 	crew.append(null)
 	crew_size -= 1

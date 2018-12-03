@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LD43"
-run/main_scene="res://shmup/niveaux/niveau1.tscn"
+run/main_scene="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -24,7 +24,6 @@ playerData="*res://global/playerData.gd"
 window/size/width=800
 window/size/height=1024
 window/size/resizable=false
-window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

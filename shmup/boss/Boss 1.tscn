@@ -3,14 +3,14 @@
 [ext_resource path="res://shmup/boss/Boss 1 Node.gd" type="Script" id=1]
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://shmup/boss/Boss1.gd" type="Script" id=3]
-[ext_resource path="res://shmup/images/gros robot.png" type="Texture" id=4]
+[ext_resource path="res://shmup/images/Boss2.png" type="Texture" id=4]
 [ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://shmup/HUD/HUD Boss.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 207.438, 143.776 )
+extents = Vector2( 120, 143.776 )
 
 [node name="Boss 1" type="Node"]
 
@@ -30,12 +30,10 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="hitbox" type="CollisionShape2D" parent="Boss" index="0"]
 
+position = Vector2( 0.598999, 9.953 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Boss" index="1"]
@@ -79,6 +77,8 @@ one_shot = false
 autostart = false
 
 [node name="Player" parent="." index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 1, 1 )
 
 [node name="HUD Boss 1" parent="." index="3" instance=ExtResource( 6 )]
 

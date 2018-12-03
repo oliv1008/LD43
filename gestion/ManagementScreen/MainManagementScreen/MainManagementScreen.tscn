@@ -526,7 +526,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="FloorIt" type="CenterContainer" parent="VBoxContainer" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -574,5 +573,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Seats" to="." method="_on_Seats_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/ButtonsContainer/Crew" to="." method="_on_Crew_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/FloorIt/FloorItButton" to="." method="_on_FloorItButton_pressed"]
 
 

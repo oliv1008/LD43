@@ -56,7 +56,7 @@ func _ready():
 	else:
 		LWButton.text = str("Repair (-10)")
 		
-	HPLabel.text = str("HP : ", playerData.carHP, "/", playerData.carHPMax)
+	HPLabel.text = str("HP : ", playerData.carHP, "/", playerData.maxCarHP)
 		
 	for i in range(0, playerData.crew_size):
 		RobotsButtons[i].texture_normal = playerData.crew[i].portrait

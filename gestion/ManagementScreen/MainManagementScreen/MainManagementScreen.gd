@@ -3,6 +3,7 @@ extends Control
 var PathToTinkerScene = "res://gestion/ManagementScreen/TinkerManagementScreen/TinkerManagementScreen.tscn"
 var PathToSeatsScene = "res://gestion/ManagementScreen/SeatsScreen/SeatsScreen.tscn"
 var PathToCrewStatusScreen = "res://gestion/ManagementScreen/CrewStatusScreen/CrewStatusScreen.tscn"
+var PathToNextLevel
 
 onready var EngineLabel = $VBoxContainer/Car/CarInfoContainer/CarPartsContainer/Engine
 onready var BrakeLabel = $VBoxContainer/Car/CarInfoContainer/CarPartsContainer/Brake
@@ -40,10 +41,10 @@ func _ready():
 	else:
 		LeftWheelLabel.text = "Left wheel : DEAD"
 	
-	CarHPLabel.text = str("Car HP : ", playerData.carHP, "/", playerData.carHPMax)
+	CarHPLabel.text = str("Car HP : ", playerData.carHP, "/", playerData.maxCarHP)
 	FuelLeftLabel.text = str("Neon left : ", playerData.neonLeft)
-	CurrentStageLabel.text = str("Stage ", playerData.currentStage, "/10")
-	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", "999")
+	CurrentStageLabel.text = str("Stage ", playerData.currentStage, "/5")
+	FuelRequiredLabel.text = str("Neon required to reach\nnext stop : ", "XXX")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -60,3 +61,10 @@ func _on_Seats_pressed():
 
 func _on_Crew_pressed():
 	get_tree().change_scene(PathToCrewStatusScreen)
+
+
+func _on_FloorItButton_pressed():
+	if playerData.currentStage <= 4:
+		PathToNextLevel = str("res://shmup/niveaux/niveau", playerData.currentStage + 1, ".tscn")
+		get_tree().change_scene(PathToNextLevel)
+	

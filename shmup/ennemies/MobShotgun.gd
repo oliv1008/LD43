@@ -16,19 +16,6 @@ var nombreDeMort = 0
 
 func _ready():
 	position = spawnPosition
-	if deplacement == "Horizontale Gauche":
-		position.x = 0
-		position.y = randi() % 201
-	if deplacement == "Horizontale Droite":
-		position.x = 800
-		position.y = randi() % 201
-	if deplacement == "Up and Down Gauche":
-		position.x = 0
-		position.y = randi() % 201
-	if deplacement == "Up and Down Droite":
-		position.x = 800
-		position.y = randi() % 201
-		
 	if deplacement == "GD":
 		$TimerGD.start()
 		
@@ -49,18 +36,6 @@ func _physics_process(delta):
 		velocity = Vector2(0,0)
 	if deplacement == "Verticale":
 		velocity.y += 1
-	if deplacement == "Horizontale Gauche":
-		velocity.x += 1
-	if deplacement == "Horizontale Droite":
-		velocity.x -= 1
-	if deplacement == "Up and Down Gauche":
-		a += cosSpeed
-		position.x += 1 
-		position.y += float(ampS*sin(a)) #+ spawnPosition.y 
-	if deplacement == "Up and Down Droite":
-		a += cosSpeed
-		position.x -= 1 
-		position.y += float(ampS*sin(a)) #+ spawnPosition.y
 
 	velocity = velocity.normalized() * speed * delta
 	position += velocity

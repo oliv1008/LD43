@@ -4,14 +4,14 @@
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://shmup/boss/Boss2.gd" type="Script" id=3]
 [ext_resource path="res://shmup/ennemies/MobLaser.tscn" type="PackedScene" id=4]
-[ext_resource path="res://shmup/images/gros robot.png" type="Texture" id=5]
+[ext_resource path="res://shmup/images/Boss2.png" type="Texture" id=5]
 [ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://shmup/HUD/HUD Boss 2.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 207.438, 143.776 )
+extents = Vector2( 120.599, 150.047 )
 
 [node name="Boss 2" type="Node"]
 
@@ -31,13 +31,11 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 MobLaser = ExtResource( 4 )
 
 [node name="hitbox" type="CollisionShape2D" parent="Boss" index="0"]
 
+position = Vector2( 10.599, 9.953 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Boss" index="1"]

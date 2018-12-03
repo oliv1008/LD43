@@ -5,6 +5,7 @@ export (PackedScene) var trash2
 export (PackedScene) var MobShotgun
 export (PackedScene) var MobLaser
 export (PackedScene) var MobCanon
+var MainManagementScreen = "res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
 
 var randomDep = 0
 var randomTrash = 0
@@ -22,16 +23,23 @@ func _physics_process(delta):
 
 func _on_TimerMob_timeout():
 	$TrashPath/TrashSpawnLocation.set_offset(randi())
-	if randomTrash == 0:
-		my_trash = trash2.instance()
-	elif randomTrash == 1:
+	
+	if randomTrash == 1:
 		my_trash = trash.instance()
+		randomDep = randi() % 4
 	elif randomTrash == 2:
-		my_trash = MobLaser.instance()
-	elif randomTrash == 3:
 		my_trash = MobCanon.instance()
-	else:
+		randomDep = randi() % 4
+	elif randomTrash == 0:
 		my_trash = MobShotgun.instance()
+		randomDep = randi() % 4
+	elif randomTrash == 4:
+		my_trash = trash2.instance()
+		randomDep = 4 + randi() % 4
+	elif randomTrash == 3:
+		my_trash = MobLaser.instance()
+		randomDep = 3
+	
 	my_trash.get_node("poubelle").spawnPosition = $TrashPath/TrashSpawnLocation.position
 	if randomDep == 0:
 		my_trash.get_node('poubelle').deplacement = "Diagonale"
@@ -39,19 +47,17 @@ func _on_TimerMob_timeout():
 		my_trash.get_node('poubelle').deplacement = "GD"
 	elif randomDep == 2:
 		my_trash.get_node('poubelle').deplacement = "Sinus"
-	elif randomDep == 3:
+	elif randomDep == 5:
 		my_trash.get_node('poubelle').deplacement = "Horizontale Droite"
 	elif randomDep == 4:
 		my_trash.get_node('poubelle').deplacement = "Horizontale Gauche"
-	elif randomDep == 5:
+	elif randomDep == 3:
 		my_trash.get_node('poubelle').deplacement = "Verticale"
 	elif randomDep == 6:
 		my_trash.get_node('poubelle').deplacement = "Up and Down Gauche"
 	elif randomDep == 7:
 		my_trash.get_node('poubelle').deplacement = "Up and Down Droite"
 		
-		
-	
 	add_child(my_trash)
 
 	
@@ -61,5 +67,6 @@ func _on_TimerStylePoubelle_timeout():
 	
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
-	get_tree().change_scene("res://shmup/niveaux/niveau5.tscn")
-	playerData.nombreATuer = 10
+	playerData.currentStage += 1
+	get_tree().change_scene(MainManagementScreen)
+	playerData.nombreATuer = 5
