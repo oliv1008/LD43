@@ -52,7 +52,7 @@ func _ready():
 	for i in range(0, 4):
 		seats.append(null)
 	randomize()
-	for i in range(0, 4):
+	for i in range(0, 5):
 		crew.append(null)
 		
 	crew[0] = characterManagement.randomize_new_character()

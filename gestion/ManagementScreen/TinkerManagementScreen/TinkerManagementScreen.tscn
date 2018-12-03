@@ -7,7 +7,7 @@
 [ext_resource path="res://button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 
-[node name="TinkerManagementScreen" type="Control" index="0"]
+[node name="TinkerManagementScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -69,6 +69,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="CarPartsContainer" type="VBoxContainer" parent="MainContainer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -565,7 +566,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 617.0
 margin_right = 773.0
-margin_bottom = 621.0
+margin_bottom = 731.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -581,6 +582,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 773.0
+margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -593,7 +595,53 @@ _sections_unfolded = [ "custom_constants" ]
 
 [node name="Robot1" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="0"]
 
-visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 54.0
+margin_right = 118.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+_sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="Robot2" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 204.0
+margin_right = 268.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 3
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+stretch_mode = 4
+_sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="Robot3" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -615,34 +663,8 @@ group = null
 texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
-[node name="Robot2" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="1"]
+[node name="Robot4" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="3"]
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 429.0
-margin_right = 493.0
-margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 3
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 6 )
-stretch_mode = 4
-_sections_unfolded = [ "Size Flags", "Textures" ]
-
-[node name="Robot3" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="2"]
-
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -664,15 +686,14 @@ group = null
 texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Size Flags", "Textures" ]
 
-[node name="Robot4" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="3"]
+[node name="Robot5" type="TextureButton" parent="MainContainer/ScrapContainer/CrewContainer" index="4"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 579.0
-margin_right = 643.0
+margin_left = 654.0
+margin_right = 718.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -694,9 +715,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 4.0
+margin_top = 68.0
 margin_right = 773.0
-margin_bottom = 4.0
+margin_bottom = 114.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -707,7 +728,60 @@ alignment = 1
 
 [node name="ScrapButton1" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="0"]
 
-visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_right = 158.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Scrap"
+flat = true
+align = 1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="ScrapButton2" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_right = 309.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Scrap"
+flat = true
+align = 1
+_sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="ScrapButton3" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="2"]
+
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -733,37 +807,8 @@ flat = true
 align = 1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
-[node name="ScrapButton2" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="1"]
+[node name="ScrapButton4" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="3"]
 
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 388.0
-margin_right = 535.0
-margin_bottom = 46.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = ExtResource( 5 )
-custom_fonts/font = ExtResource( 4 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Scrap"
-flat = true
-align = 1
-_sections_unfolded = [ "Theme", "custom_fonts" ]
-
-[node name="ScrapButton3" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="2"]
-
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -789,15 +834,14 @@ flat = true
 align = 1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
-[node name="ScrapButton4" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="3"]
+[node name="ScrapButton5" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="4"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 539.0
-margin_right = 686.0
+margin_left = 615.0
+margin_right = 762.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -819,6 +863,7 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [node name="DialogueContainer" type="VBoxContainer" parent="MainContainer" index="3"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -973,6 +1018,8 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 
 [connection signal="pressed" from="MainContainer/ScrapContainer/CrewContainer/Robot4" to="." method="_on_Robot4_pressed"]
 
+[connection signal="pressed" from="MainContainer/ScrapContainer/CrewContainer/Robot5" to="." method="_on_Robot5_pressed"]
+
 [connection signal="pressed" from="MainContainer/ScrapContainer/ScrapButtonsContainer/ScrapButton1" to="." method="_on_ScrapButton1_pressed"]
 
 [connection signal="pressed" from="MainContainer/ScrapContainer/ScrapButtonsContainer/ScrapButton2" to="." method="_on_ScrapButton2_pressed"]
@@ -980,6 +1027,8 @@ _sections_unfolded = [ "Theme", "custom_fonts" ]
 [connection signal="pressed" from="MainContainer/ScrapContainer/ScrapButtonsContainer/ScrapButton3" to="." method="_on_ScrapButton3_pressed"]
 
 [connection signal="pressed" from="MainContainer/ScrapContainer/ScrapButtonsContainer/ScrapButton4" to="." method="_on_ScrapButton4_pressed"]
+
+[connection signal="pressed" from="MainContainer/ScrapContainer/ScrapButtonsContainer/ScrapButton5" to="." method="_on_ScrapButton5_pressed"]
 
 [connection signal="pressed" from="MainContainer/DialogueContainer/ConfirmationButtonsContainer/Yes" to="." method="_on_Yes_pressed"]
 
