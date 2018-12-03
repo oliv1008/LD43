@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SHMUP Theme Dj=1 (loop).ogg-213169e9132769aa5cfe680b31ffdf6d.oggstr"
+
+[deps]
+
+source_file="res://Musique/SHMUP Theme Dj=1 (loop).ogg"
+dest_files=[ "res://.import/SHMUP Theme Dj=1 (loop).ogg-213169e9132769aa5cfe680b31ffdf6d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -16,6 +16,10 @@ onready var CurrentStageLabel = $VBoxContainer/CurrentStage/VBoxContainer/Curren
 onready var FuelRequiredLabel = $VBoxContainer/CurrentStage/VBoxContainer/FuelRequired
 
 func _ready():
+	
+	if playerData.songName != "MainTheme":
+		MusicPlayer.playSong("MainTheme", 0, 1, 57)
+	
 	if playerData.carParts["engine"]:
 		EngineLabel.text = "Engine : OK"
 	else:

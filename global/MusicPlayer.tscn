@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://global/MusicPlayer.gd" type="Script" id=1]
+
+[node name="MusicPlayer" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="TimerIn" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="TimerOut" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="MusicStream" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = null
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="timeout" from="TimerIn" to="." method="_on_TimerIn_timeout"]
+
+[connection signal="timeout" from="TimerOut" to="." method="_on_TimerOut_timeout"]
+
+

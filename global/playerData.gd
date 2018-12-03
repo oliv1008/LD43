@@ -27,6 +27,8 @@ var nombreATuer = 1
 var niveauFini = false 
 var lanceBoss = false 
 
+var songName
+
 func _ready():
 	for i in range(0, 4):
 		seats.append(null)
