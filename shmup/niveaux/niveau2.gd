@@ -67,5 +67,5 @@ func _on_TimerStylePoubelle_timeout():
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
 	playerData.currentStage += 1
-	get_tree().change_scene(MainManagementScreen)
+	get_tree().change_scene("res://gestion/ManagementScreen/EventScreen/Event4/Event4.tscn")
 	#playerData.nombreATuer = 5

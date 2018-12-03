@@ -14,6 +14,7 @@ var TraitDeCaracteresDispo = ["Gambler", "Insane dancer", "language doc", "Count
 							"Firefighter", "Childish", "Pro poker player", "Music doc", "Nice guy", "Scooby-doo fan", "Wrestler", "Love to fight", "bold", \
 							"Happy", "Dumb", "Grumpy", "Sleepy", "Dopey", "Bashful", "Sneazy"]
 var NbTraitDeCaracteresDispo = TraitDeCaracteresDispo.size()
+var trait_dispo
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -30,6 +31,9 @@ func randomize_new_character():
 	my_character.attaque_value = randi() % 4 + 10
 	my_character.competence = CompetenceDisponible[randi() % NbCompetence]
 	my_character.competenceDescription = competenceDescription[my_character.competence]
+	for i in range(0, randi() % 3 + 1):
+		trait_dispo = TraitDeCaracteresDispo
+		my_character.trait.append((trait_dispo [randi() % 19]))
 	playerData.crew_size += 1
 	my_character.add_to_crew()
 	return my_character

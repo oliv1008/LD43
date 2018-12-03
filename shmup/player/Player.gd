@@ -42,7 +42,7 @@ func _on_TimerProjec_timeout():
 		projectile.position.y += 10
 		add_child(projectile)
 	
-	nbRobots = playerData.seats_size
+	nbRobot = playerData.seats_size
 	if nbRobot == 0:
 		$Voiture/Sprite.texture = voitureA1
 	if nbRobot == 1:

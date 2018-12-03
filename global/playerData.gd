@@ -2,11 +2,11 @@ extends Node2D
 
 var playerRef
 
-var boss1HP = 5000
+var boss1HP = 100
 var maxboss1HP = 5000
-var boss2HP = 10000
+var boss2HP = 100
 var maxboss2HP = 10000
-var boss3HP = 15000
+var boss3HP = 150
 var maxboss3HP = 15000
 
 #Indique l'état des parties de la voiture
@@ -15,6 +15,7 @@ var carParts = {"right_wheel" : true,
 				"brake" : true,
 				"engine" : true,
 				"clutch" : true}
+				
 var carHP = 100
 var maxCarHP = 100
 var neonLeft = 100
