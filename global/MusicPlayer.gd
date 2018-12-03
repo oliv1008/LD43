@@ -26,8 +26,13 @@ func playSong(name, fadeOut=0, fadeIn=0, time=0):
 			print("Musique ", name, " en queue")
 			nextSongName = name
 			nextSong = songs[name]
-			$TimerOut.wait_time = float(fadeOut) / float(min_db)
+			if fadeOut > 0:
+				$TimerOut.wait_time = float(fadeOut) / float(min_db)
+			else:
+				$TimerOut.wait_time = 0.2
 			$TimerOut.start()
+				
+			
 		else:
 			currentSongName = name
 			song = load(songs[name])

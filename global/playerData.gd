@@ -73,6 +73,7 @@ func remove_robot(robot):
 	crew_size -= 1
 	
 func level_up_crew():
+	print("level up !")
 	for robot in range(0, crew_size):
 		crew[robot].level_up()
 	

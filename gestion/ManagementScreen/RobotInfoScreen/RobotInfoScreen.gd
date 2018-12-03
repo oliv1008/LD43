@@ -34,7 +34,7 @@ func init(robot):
 	Portrait.texture = robot.portrait
 	NameLabel.text = robot.robot_name
 	LevelLabel.text = str("Level : ", robot.level)
-	AttaqueLabel.text = str("Damage : ", robot.attaque_value)
+	AttaqueLabel.text = str("Damage : ", robot.base_attaque_value * robot.damageModifier)
 	CompetenceLabel.text = str("Skill : ", robot.competence, " (", robot.competenceDescription, ")")
 	for i in range(0, robot.trait.size()):
 		TraitArray[i].visible = true
