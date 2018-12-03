@@ -17,9 +17,9 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("An UFO captures your car\n", 0.03)
+	tie.buff_text("An UFO captures your car.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("You are face to face with an alien\n", 0.03)
+	tie.buff_text("You are face to face with an alien.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
@@ -135,9 +135,9 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("He starts crying because no one talk to him the last 7 years\n", 0.03)
+	tie.buff_text("He starts crying because no one talk to him the last 7 years.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("He gives you 80 Neon\n", 0.03)
+	tie.buff_text("He gives you 80 Neon.\n", 0.03)
 	tie.buff_silence(0.5)
 	playerData.neonLeft += 80
 	tie.set_state(tie.STATE_OUTPUT)

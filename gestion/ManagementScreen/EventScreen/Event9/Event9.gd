@@ -17,9 +17,9 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You arrive to a garage\n", 0.03)
+	tie.buff_text("You arrive to a garage.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("A guy working here offers you his work if you give him 20 Neon\n", 0.03)
+	tie.buff_text("A guy working here offers you his work if you give him 20 Neon.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
@@ -117,7 +117,7 @@ func _on_Choice2_pressed():
 
 func _on_Choice3_pressed():
 	tie.buff_clear()
-	tie.buff_text("Nothing happens\n", 0.03)
+	tie.buff_text("Nothing happens.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
@@ -129,7 +129,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("You refuse but still give him 10 Neon for being kind\n", 0.03)
+	tie.buff_text("You refuse but still give him 10 Neon for being kind.\n", 0.03)
 	tie.buff_silence(0.5)
 	playerData.neonLeft -= 10
 	tie.set_state(tie.STATE_OUTPUT)

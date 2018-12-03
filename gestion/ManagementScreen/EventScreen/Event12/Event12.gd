@@ -17,9 +17,9 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You enters in a Nightclub to celebrate your arrival to LA\n", 0.03)
+	tie.buff_text("You enters in a Nightclub to celebrate your arrival to LA.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("The DJ is playing an hardbass song\n", 0.03)
+	tie.buff_text("The DJ is playing an hardbass song.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
@@ -135,11 +135,11 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("Everyone stares at you\n", 0.03)
+	tie.buff_text("Everyone stares at you.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("You're the boss\n", 0.03)
+	tie.buff_text("You're the boss.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("they give you 100 Neon\n", 0.03)
+	tie.buff_text("they give you 100 Neon.\n", 0.03)
 	playerData.neonLeft += 100
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false

@@ -104,7 +104,7 @@ func _on_Choice1_pressed():
 func _on_Choice2_pressed():
 	tie.buff_clear()
 	tie.buff_text("Epcot, meh.\n", 0.03)
-	tie.buff_text("Not that fun, not that worth. You won 10 Neon\n", 0.03)
+	tie.buff_text("Not that fun, not that worth. You won 10 Neon.\n", 0.03)
 	playerData.neonLeft += 10
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
@@ -132,7 +132,7 @@ func _on_Choice4_pressed():
 	tie.buff_clear()
 	tie.buff_text("OH MY GOD IS THIS THE REAL MICKEY ?\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("Mickey founds your excitement cute and decides to join your crew\n", 0.03)
+	tie.buff_text("Mickey founds your excitement cute and decides to join your crew.\n", 0.03)
 	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false

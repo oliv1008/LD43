@@ -17,9 +17,9 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You arrive to a dinner\n", 0.03)
+	tie.buff_text("You arrive to a dinner.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("A big robot with red eyes asks you to give him your bike and clothes\n", 0.03)
+	tie.buff_text("A big robot with red eyes asks you to give him your bike and clothes.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
@@ -115,9 +115,9 @@ func _on_Choice2_pressed():
 
 func _on_Choice3_pressed():
 	tie.buff_clear()
-	tie.buff_text("He thinks you're really nice\n", 0.03)
+	tie.buff_text("He thinks you're really nice.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("He says : Asta la Vista babe and then joins your crew\n", 0.03)
+	tie.buff_text("He says : Asta la Vista babe and then joins your crew.\n", 0.03)
 	if playerData.crew_size == 5:
 		playerData.crew[playerData.crew_size-1] = characterManagement.randomize_new_character()
 		tie.buff_text("Your crew is full, the big robot takes the place of one of your mate.\n", 0.03)
@@ -133,11 +133,11 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("You always do this you greedy bastard\n", 0.03)
+	tie.buff_text("You always do this you greedy bastard.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("Of course you lost\n", 0.03)	
+	tie.buff_text("Of course you lost.\n", 0.03)	
 	tie.buff_silence(0.5)
-	tie.buff_text("But someone thought you were a stripper and gave you 50 Neon\n", 0.03)
+	tie.buff_text("But someone thought you were a stripper and gave you 50 Neon.\n", 0.03)
 	tie.buff_silence(0.5)
 	playerData.neonLeft += 50
 	tie.set_state(tie.STATE_OUTPUT)
