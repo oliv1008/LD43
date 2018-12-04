@@ -73,6 +73,7 @@ func randomize_new_character():
 func new_unique_character(name):
 	if name == "B20-B4":
 		var my_character = CharacterScene.instance()
+		my_character.portrait = load(str(portraitPath, "2.png"))
 		my_character.robot_name = "B20-B4"
 		my_character.quote = "Bang bang baaaaang"
 		my_character.base_attaque_value = randi() % 4 + 10
