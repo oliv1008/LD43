@@ -434,7 +434,9 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Seat 1 : +20% 
 	damage
-Seat 3 : DJ (the better the level, the better the music)"
+	
+Seat 3 : DJ
+(the better the level, the better the music)"
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
