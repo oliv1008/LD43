@@ -65,7 +65,6 @@ func _on_TimerStylePoubelle_timeout():
 func _my_level_was_completed():
 	$TimerStylePoubelle.stop()
 	if playerData.lanceBoss == true:
-		playerData.level_up_crew()
 		playerData.niveauFini = false
 		playerData.lanceBoss = false
 		playerData.playerRef = $Player/Voiture.position

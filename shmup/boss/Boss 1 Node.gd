@@ -16,5 +16,6 @@ func _my_level_was_completed():
 	MusicPlayer.get_node("MusicStream").volume_db = 0
 	MusicPlayer.brutalPlaySong("EventTheme")
 	#MusicPlayer.playSong("EventTheme", 0.1, 0.1, 0)
+	playerData.level_up_crew()
 	get_tree().change_scene("res://gestion/ManagementScreen/EventScreen/Event1/Event1.tscn")
 
