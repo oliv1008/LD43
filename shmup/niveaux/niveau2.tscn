@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://shmup/niveaux/niveau2.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/trash.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://shmup/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://my_env.tres" type="Environment" id=10]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -63,6 +64,10 @@ loop = true
 lookahead = 4.0
 
 [node name="CanvasLayer" parent="." index="5" instance=ExtResource( 9 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="6"]
+
+environment = ExtResource( 10 )
 
 [connection signal="timeout" from="TimerMob" to="." method="_on_TimerMob_timeout"]
 
