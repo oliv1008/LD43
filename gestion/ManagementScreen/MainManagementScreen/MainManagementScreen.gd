@@ -16,6 +16,9 @@ onready var CurrentStageLabel = $VBoxContainer/CurrentStage/VBoxContainer/Curren
 onready var FuelRequiredLabel = $VBoxContainer/CurrentStage/VBoxContainer/FuelRequired
 
 func _ready():
+	if playerData.neonLeft < 0:
+		playerData.neonLeft = 0
+		
 	if playerData.neonLeft < playerData.baseNeonNextStage * playerData.neonNextStageModifier:
 		$VBoxContainer/FloorIt/FloorItButton.disabled = true
 	

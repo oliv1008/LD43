@@ -103,8 +103,8 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("You lost, losing the 40 Neon you bet.\n", 0.03)
-	playerData.neonLeft -= 40
+	tie.buff_text("You won, the prize was 20 Neon.\n", 0.03)
+	playerData.neonLeft += 20
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false

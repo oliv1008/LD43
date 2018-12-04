@@ -16,7 +16,7 @@ func _on_TimerProjec_timeout():
 	projectile.position = $Voiture.position
 	projectile.position.x -= 22
 	projectile.position.y -= 10
-	projectile.degats = 5
+	projectile.degats = 15
 	add_child(projectile)
 	if playerData.seats[0] != null:
 		projectile = ProjectileScene.instance()

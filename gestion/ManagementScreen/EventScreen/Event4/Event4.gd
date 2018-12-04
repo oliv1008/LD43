@@ -89,8 +89,8 @@ func _on_Choice1_pressed():
 		tie.buff_clear()
 		tie.buff_text("The music stop.\n", 0.03)
 		tie.buff_text("No one is having fun anymore, poor DJ in the back.\n", 0.03)
-		tie.buff_text("You lose 20 Neon.\n", 0.03)
-		playerData.neonLeft -= 20
+		tie.buff_text("You lose 10 Neon.\n", 0.03)
+		playerData.neonLeft -= 10
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
 		choice1Button.visible = false

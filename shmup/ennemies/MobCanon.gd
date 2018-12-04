@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var health = 200
+var health = 160
 
 export (int) var speed
 export (String) var deplacement

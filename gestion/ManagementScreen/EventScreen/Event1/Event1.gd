@@ -89,6 +89,8 @@ func _on_Choice1_pressed():
 	if state < 2:
 		tie.buff_clear()
 		tie.buff_text("He refuses again, nothing happens.\n", 0.03)
+		tie.buff_text("Luckily, you found 10 Neon on your way back to your car.\n", 0.03)
+		playerData.neonLeft += 10
 		tie.set_state(tie.STATE_OUTPUT)
 		choiceLabel.visible = false
 		choice1Button.visible = false
@@ -102,8 +104,8 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("He catches you, you lose 20 Neon .\n", 0.03)
-	playerData.neonLeft -= 20
+	tie.buff_text("He catches you, you lose 10 Neon .\n", 0.03)
+	playerData.neonLeft -= 10
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false
