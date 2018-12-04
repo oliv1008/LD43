@@ -83,10 +83,8 @@ func playShmupSong():
 		MusicPlayer.brutalPlaySong("Dj0")
 	else:
 		if seats[2].level == 1:
-			MusicPlayer.brutalPlaySong("Dj0")
-		if seats[2].level == 2:
 			MusicPlayer.brutalPlaySong("Dj1")
-		if seats[2].level == 3:
+		if seats[2].level == 2:
 			MusicPlayer.brutalPlaySong("Dj2")
-		if seats[2].level == 4:
+		if seats[2].level >= 3:
 			MusicPlayer.brutalPlaySong("Dj3")
