@@ -44,14 +44,13 @@ _sections_unfolded = [ "Pause" ]
 "Ennemies",
 ]]
 
-editor/display_folded = true
 position = Vector2( 395, 150 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 3 )
-_sections_unfolded = [ "Transform", "collision" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 MobLaser = ExtResource( 4 )
 
 [node name="hitbox" type="CollisionShape2D" parent="Boss" index="0"]

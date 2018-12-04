@@ -119,7 +119,7 @@ func _on_Choice3_pressed():
 	tie.buff_clear()
 	tie.buff_text("Daaaaamn boy you're sick.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("David Ghetto joins you're crew.\n", 0.03)
+	tie.buff_text("David Ghetto joins your crew.\n", 0.03)
 	if playerData.crew_size == 4:
 		playerData.crew[playerData.crew_size-1] = characterManagement.randomize_new_character()
 		tie.buff_text("Even if your crew was full, one of your crew member forgot to stop dancing and stayed in the nightclub.\n", 0.03)
