@@ -118,7 +118,7 @@ func _on_Choice3_pressed():
 	tie.buff_text("He thinks you're really nice.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("He says : Asta la Vista babe and then joins your crew.\n", 0.03)
-	if playerData.crew_size == 5:
+	if playerData.crew_size == 4:
 		playerData.crew[playerData.crew_size-1] = characterManagement.randomize_new_character()
 		tie.buff_text("Your crew is full, the big robot takes the place of one of your mate.\n", 0.03)
 	else:

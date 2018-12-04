@@ -101,7 +101,7 @@ func _on_TimerBullet_timeout():
 func _on_TimerMob_timeout():
 	my_trash = MobLaser.instance()
 	my_trash.position = Vector2(50-randi() % 200,0)
-	my_trash.get_node("poubelle").health = 70
+	my_trash.get_node("poubelle").health = 130
 	my_trash.get_node("poubelle").speed = 150
 	add_child(my_trash)
 

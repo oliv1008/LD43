@@ -120,7 +120,7 @@ func _on_Choice2_pressed():
 func _on_Choice3_pressed():
 	tie.buff_clear()
 	tie.buff_text("He is aroused. He joins your crew.\n", 0.03)
-	if playerData.crew_size == 5:
+	if playerData.crew_size == 4:
 		playerData.crew[playerData.crew_size-1] = characterManagement.randomize_new_character()
 		tie.buff_text("But your crew is full, the alien eats one of them.\n", 0.03)
 	else:

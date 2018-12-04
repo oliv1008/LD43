@@ -102,7 +102,10 @@ func _on_Choice2_pressed():
 	tie.buff_clear()
 	tie.buff_text("Your heroism enables you to save a robot.\n", 0.03)
 	tie.buff_text("He joins your crew.\n", 0.03)
-	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
+	if playerData.crew_size == 4:
+		tie.buff_text("you bring back a dead robot body worth 80 Neon !\n", 0.03)
+	else:
+		playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false
 	choice1Button.visible = false

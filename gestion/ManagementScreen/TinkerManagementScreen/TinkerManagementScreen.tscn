@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://gestion/ManagementScreen/TinkerManagementScreen/TinkerManagementScreen.gd" type="Script" id=1]
 [ext_resource path="res://gestion/ManagementScreen/RobotInfoScreen/RobotInfoScreen.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
 [ext_resource path="res://button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://cave_story32.tres" type="DynamicFont" id=7]
 
 [node name="TinkerManagementScreen" type="Control"]
 
@@ -728,7 +729,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_constants/separation = 38
 alignment = 1
+_sections_unfolded = [ "custom_constants" ]
 
 [node name="ScrapButton1" type="Button" parent="MainContainer/ScrapContainer/ScrapButtonsContainer" index="0"]
 
@@ -878,9 +881,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 707.0
-margin_right = 773.0
-margin_bottom = 841.0
+margin_top = 817.0
+margin_right = 770.0
+margin_bottom = 951.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -895,7 +898,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 773.0
+margin_right = 770.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -918,7 +921,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 44.0
-margin_right = 773.0
+margin_right = 770.0
 margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -941,7 +944,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 88.0
-margin_right = 773.0
+margin_right = 770.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -957,8 +960,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 303.0
-margin_right = 396.0
+margin_left = 301.0
+margin_right = 394.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -984,8 +987,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 400.0
-margin_right = 470.0
+margin_left = 398.0
+margin_right = 468.0
 margin_bottom = 46.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1004,6 +1007,29 @@ text = "No"
 flat = true
 align = 1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 1040.0
+margin_right = 290.0
+margin_bottom = 1069.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "Press Escape to return"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="MainContainer/CarPartsContainer/EngineContainer/ButtonEngine" to="." method="_on_ButtonEngine_pressed"]
 

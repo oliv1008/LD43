@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://gestion/ManagementScreen/CrewStatusScreen/CrewStatusScreen.gd" type="Script" id=1]
 [ext_resource path="res://gestion/ManagementScreen/RobotInfoScreen/RobotInfoScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://cave_story32.tres" type="DynamicFont" id=6]
 
-[node name="CrewStatusScreen" type="Control"]
+[node name="CrewStatusScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,6 +27,7 @@ MainScreen = ExtResource( 3 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -90,6 +92,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -246,6 +249,29 @@ texture_normal = ExtResource( 5 )
 expand = true
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Size Flags", "Textures" ]
+
+[node name="Label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 1040.0
+margin_right = 290.0
+margin_bottom = 1060.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "Press Escape to return"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Portrait1" to="." method="_on_Portrait1_pressed"]
 
