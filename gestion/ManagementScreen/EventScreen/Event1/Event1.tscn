@@ -7,7 +7,7 @@
 [ext_resource path="res://button_theme.tres" type="Theme" id=5]
 [ext_resource path="res://cave_story128.tres" type="DynamicFont" id=6]
 
-[node name="EventScreen" type="Control"]
+[node name="EventScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

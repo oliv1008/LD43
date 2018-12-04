@@ -4,7 +4,7 @@
 [ext_resource path="res://button_theme.tres" type="Theme" id=2]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=3]
 
-[node name="EndScreen" type="Control" index="0"]
+[node name="EndScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
