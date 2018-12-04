@@ -7,7 +7,7 @@
 [ext_resource path="res://shmup/images/Voiture_vide.png" type="Texture" id=5]
 [ext_resource path="res://cave_story32.tres" type="DynamicFont" id=6]
 
-[node name="SeatsScreen" type="Control" index="0"]
+[node name="SeatsScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -442,6 +442,7 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="MainContainer" type="VBoxContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -881,6 +882,29 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 1040.0
+margin_right = 290.0
+margin_bottom = 1060.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "Press Escape to return"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [connection signal="pressed" from="ButtonContainer/Button1" to="." method="_on_Button1_pressed"]
 
