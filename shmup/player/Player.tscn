@@ -4,12 +4,12 @@
 [ext_resource path="res://shmup/player/Voiture.gd" type="Script" id=2]
 [ext_resource path="res://shmup/images/Voiture_1.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20, 50 )
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -31,18 +31,18 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 speed = 250
 
 [node name="Hitbox" type="CollisionShape2D" parent="Voiture" index="0"]
 
 position = Vector2( 0, 10 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Voiture" index="1"]
 
 texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform" ]
 
 [connection signal="timeout" from="TimerProjec" to="." method="_on_TimerProjec_timeout"]
 

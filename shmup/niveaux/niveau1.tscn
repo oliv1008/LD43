@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://shmup/niveaux/niveau1.gd" type="Script" id=1]
 [ext_resource path="res://shmup/ennemies/MobShotgun.tscn" type="PackedScene" id=2]
@@ -9,15 +9,28 @@
 [ext_resource path="res://shmup/background/background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://shmup/player/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://shmup/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://my_env.tres" type="Environment" id=10]
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 0
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+render_priority = 0
+blend_mode = 0
+light_mode = 0
+
+[sub_resource type="Curve2D" id=3]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.55011, -2.09686, 0, 0, 0, 0, 801.957, 2.09064 )
 }
 
-[node name="Niveau1" type="Node"]
+[node name="Niveau1" type="Node" index="0"]
 
 script = ExtResource( 1 )
 MobShotgun = ExtResource( 2 )
@@ -28,7 +41,14 @@ MobCanon = ExtResource( 6 )
 
 [node name="background" parent="." index="0" instance=ExtResource( 7 )]
 
+editor/display_folded = true
+material = SubResource( 1 )
+
 [node name="Player" parent="." index="1" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+material = SubResource( 2 )
+_sections_unfolded = [ "Material", "Transform" ]
 
 [node name="TimerMob" type="Timer" parent="." index="2"]
 
@@ -47,7 +67,7 @@ autostart = false
 [node name="TrashPath" type="Path2D" parent="." index="4"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 1 )
+curve = SubResource( 3 )
 
 [node name="TrashSpawnLocation" type="PathFollow2D" parent="TrashPath" index="0"]
 
@@ -63,8 +83,14 @@ lookahead = 4.0
 
 [node name="CanvasLayer" parent="." index="5" instance=ExtResource( 9 )]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="6"]
+
+environment = ExtResource( 10 )
+
 [connection signal="timeout" from="TimerMob" to="." method="_on_TimerMob_timeout"]
 
 [connection signal="timeout" from="TimerStylePoubelle" to="." method="_on_TimerStylePoubelle_timeout"]
 
 
+[editable path="background"]
+[editable path="Player"]
