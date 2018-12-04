@@ -33,7 +33,7 @@ tracks/0/keys = {
 "values": [ Vector2( 395, -200 ), Vector2( 395, 150 ) ]
 }
 
-[node name="Boss 3" type="Node"]
+[node name="Boss 3" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]

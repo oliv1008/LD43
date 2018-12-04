@@ -1,6 +1,6 @@
 extends Node
 
-var MainManagementScreen = "res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
+var EndScreen = "res://gestion/EndScreen/EndScreen.tscn"
 
 func _ready():
 	$AnimationPlayer.play("arrivee")
@@ -14,5 +14,5 @@ func _my_level_was_completed():
 	#playerData.nombreATuer = 5
 	playerData.currentStage = 0
 	MusicPlayer.get_node("MusicStream").volume_db = 0
-	get_tree().change_scene(MainManagementScreen)
+	get_tree().change_scene(EndScreen)
 
