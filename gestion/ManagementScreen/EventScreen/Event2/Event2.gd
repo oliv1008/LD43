@@ -17,7 +17,7 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You arrived at Last Vegas.\n", 0.03)
+	tie.buff_text("You arrive at Last Vegas.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("You enter a casino and start playing BlackJack.\n", 0.03)
 	tie.buff_text("You have 18.\n", 0.03)
@@ -129,7 +129,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("Once again your counting abilities are incredible, you won again. The prize was 60 Neon\n", 0.03)
+	tie.buff_text("Once again your counting abilities are incredible, you won. The prize was 60 Neon\n", 0.03)
 	playerData.neonLeft += 60
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false

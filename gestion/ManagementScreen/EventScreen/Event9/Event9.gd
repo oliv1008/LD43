@@ -17,7 +17,7 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You arrive to a garage.\n", 0.03)
+	tie.buff_text("You arrive at a garage.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("A guy working here offers you his work if you give him 20 Neon.\n", 0.03)
 	tie.buff_silence(0.5)

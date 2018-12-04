@@ -17,13 +17,13 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You see that there is an house who is on fire on the side.\n", 0.03)
+	tie.buff_text("You see that there is a house on fire on the side of the road.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
 	tie.buff_text("1 : You don't care and keep driving\n")
 	tie.buff_silence(0.5)
-	tie.buff_text("2 : You stop your car very fast and go inside the house\n")
+	tie.buff_text("2 : You stop your car very fast and rush inside\n")
 	tie.buff_silence(0.5)
 	tie.buff_text("3 : You pee on the house\n")
 	tie.buff_silence(0.5)
@@ -100,11 +100,12 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("Your heroism enables you to save a robot.\n", 0.03)
-	tie.buff_text("He joins your crew.\n", 0.03)
+	tie.buff_text("Your heroism enables you to bring back a robot !\n", 0.03)
 	if playerData.crew_size == 4:
-		tie.buff_text("you bring back a dead robot body worth 80 Neon !\n", 0.03)
+		tie.buff_text("... But he was already dead. Oh well, that's still 80 Neon earned !\n", 0.03)
+		playerData.neonLeft += 80
 	else:
+		tie.buff_text("He joins your crew.\n", 0.03)
 		playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()
 	tie.set_state(tie.STATE_OUTPUT)
 	choiceLabel.visible = false

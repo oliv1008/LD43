@@ -19,7 +19,7 @@ func _ready():
 
 	tie.buff_text("You arrive in the hood of Miami.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("A big black guy asks : want some ?\n", 0.03)
+	tie.buff_text("A big black guy asks : \"Want some ?\"\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)

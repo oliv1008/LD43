@@ -135,7 +135,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("He starts crying because no one talk to him the last 7 years.\n", 0.03)
+	tie.buff_text("He starts crying because no one talked to him in the last 7 years.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("He gives you 80 Neon.\n", 0.03)
 	tie.buff_silence(0.5)

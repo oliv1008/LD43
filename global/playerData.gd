@@ -18,7 +18,7 @@ var carParts = {"right_wheel" : true,
 				
 var carHP = 100
 var maxCarHP = 100
-var neonLeft = 100
+var neonLeft = 100000
 var crew = []
 var crew_size = 0
 var seats = []

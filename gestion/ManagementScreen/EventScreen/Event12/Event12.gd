@@ -17,15 +17,15 @@ func _ready():
 	tie.connect("resume_break", self, "_on_resume_break")
 	tie.connect("tag_buff", self, "_on_tag_buff")
 
-	tie.buff_text("You enters in a Nightclub to celebrate your arrival to LA.\n", 0.03)
+	tie.buff_text("You enter a Nightclub to celebrate your arrival in LA.\n", 0.03)
 	tie.buff_silence(0.5)
-	tie.buff_text("The DJ is playing an hardbass song.\n", 0.03)
+	tie.buff_text("The DJ is playing a hardbass song.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("What do you do ?\n\n\n\n")
 	tie.buff_silence(0.5)
 	tie.buff_text("1 : You dance your ass off\n")
 	tie.buff_silence(0.5)
-	tie.buff_text("2 : You yell SAVAGE'S MUSIC\n")
+	tie.buff_text("2 : You yell \"SAVAGE'S MUSIC\"\n")
 	tie.buff_silence(0.5)
 	tie.buff_text("3 : You beat the bouncer's ass\n")
 	tie.buff_silence(0.5)
@@ -104,7 +104,7 @@ func _on_Choice1_pressed():
 
 func _on_Choice2_pressed():
 	tie.buff_clear()
-	tie.buff_text("Everyone look at you with a disaproving face.\n", 0.03)
+	tie.buff_text("Everyone look at you with a disapproving face.\n", 0.03)
 	tie.buff_text("They steals you 50 Neon.\n", 0.03)
 	playerData.neonLeft -= 50
 	tie.set_state(tie.STATE_OUTPUT)
