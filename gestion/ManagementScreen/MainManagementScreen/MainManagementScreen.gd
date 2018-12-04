@@ -16,6 +16,9 @@ onready var CurrentStageLabel = $VBoxContainer/CurrentStage/VBoxContainer/Curren
 onready var FuelRequiredLabel = $VBoxContainer/CurrentStage/VBoxContainer/FuelRequired
 
 func _ready():
+	if playerData.neonLeft < playerData.baseNeonNextStage * playerData.neonNextStageModifier:
+		$VBoxContainer/FloorIt/FloorItButton.disabled = true
+	
 	if playerData.seats_size == 0:
 		$VBoxContainer/Car/Container/CarRect.texture = load("res://shmup/images/Voiture_1.png")
 	elif playerData.seats_size == 1:

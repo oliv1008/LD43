@@ -423,7 +423,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 396.0
 margin_top = 28.0
-margin_right = 768.0
+margin_right = 778.0
 margin_bottom = 452.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -434,7 +434,8 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 4 )
 text = "Seat 1 : +20% 
 	damage
-Seat 3 : DJ"
+Seat 3 : DJ (the better the level, the better the music)"
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -442,7 +443,6 @@ _sections_unfolded = [ "Size Flags", "custom_fonts" ]
 
 [node name="MainContainer" type="VBoxContainer" parent="." index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

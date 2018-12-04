@@ -133,7 +133,7 @@ func _on_ScrapButton5_pressed():
 	popup()
 	
 func popup():
-	NeonEarnedLabel.text = str("Neon earn : ", robot_to_scrap.level * 10 * robot_to_scrap.scrapModifier)
+	NeonEarnedLabel.text = str("Neon earn : ", 80 * robot_to_scrap.scrapModifier)
 	SacrificeLabel.text = str("Sacrifice ", robot_to_scrap.robot_name, " ?")
 	PopUp.visible = true
 
@@ -142,7 +142,7 @@ func _on_No_pressed():
 	PopUp.visible = false
 
 func _on_Yes_pressed():
-	playerData.neonLeft += robot_to_scrap.level * 10 * robot_to_scrap.scrapModifier
+	playerData.neonLeft += 80 * robot_to_scrap.scrapModifier
 	playerData.remove_robot(robot_to_scrap)
 	get_tree().reload_current_scene()
 
