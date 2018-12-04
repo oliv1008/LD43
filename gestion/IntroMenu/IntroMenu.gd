@@ -3,9 +3,8 @@ extends Control
 var pathToManagementScreen = "res://gestion/ManagementScreen/MainManagementScreen/MainManagementScreen.tscn"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	MusicPlayer.get_node("MusicStream").volume_db = 0
+	MusicPlayer.brutalPlaySong("MainTheme")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
