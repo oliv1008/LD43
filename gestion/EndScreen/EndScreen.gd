@@ -5,7 +5,8 @@ extends Control
 # var b = "textvar"
 
 func _ready():
-	MusicPlayer.get_node("MusicStream").brutalPlaySong("musique_fin")
+	MusicPlayer.get_node("MusicStream").volume_db = 10
+	MusicPlayer.brutalPlaySong("musique_fin")
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

@@ -45,7 +45,7 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "RAGE QUIT"
-flat = false
+flat = true
 align = 1
 _sections_unfolded = [ "Theme", "custom_fonts" ]
 
