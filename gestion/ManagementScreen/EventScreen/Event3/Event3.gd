@@ -128,7 +128,7 @@ func _on_Choice3_pressed():
 
 func _on_Choice4_pressed():
 	tie.buff_clear()
-	tie.buff_text("The boulimic robot vomits in your care.\n", 0.03)
+	tie.buff_text("The boulimic robot vomits in your car.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("You had to use 40 Neon to wash the car.\n", 0.03)
 	playerData.neonLeft -= 40

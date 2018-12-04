@@ -73,19 +73,20 @@ func remove_robot(robot):
 	crew_size -= 1
 	
 func level_up_crew():
-	print("level up !")
 	for robot in range(0, crew_size):
 		crew[robot].level_up()
 	
 func playShmupSong():
+	MusicPlayer.get_node("MusicStream").volume_db = 10
 	if seats[2] == null:
-		MusicPlayer.playSong("Dj0", 0.1, 0.1, 0)
+		#MusicPlayer.playSong("Dj0", 0.1, 0.1, 0)
+		MusicPlayer.brutalPlaySong("Dj0")
 	else:
 		if seats[2].level == 1:
-			MusicPlayer.playSong("Dj0", 0.1, 0.1, 0)
+			MusicPlayer.brutalPlaySong("Dj0")
 		if seats[2].level == 2:
-			MusicPlayer.playSong("Dj1", 0.1, 0.1, 0)
+			MusicPlayer.brutalPlaySong("Dj1")
 		if seats[2].level == 3:
-			MusicPlayer.playSong("Dj2", 0.1, 0.1, 0)
+			MusicPlayer.brutalPlaySong("Dj2")
 		if seats[2].level == 4:
-			MusicPlayer.playSong("Dj3", 0.1, 0.1, 0)
+			MusicPlayer.brutalPlaySong("Dj3")

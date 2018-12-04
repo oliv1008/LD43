@@ -9,6 +9,7 @@ func _on_hit():
 	if playerData.carHP == 0:
 		$"../TimerProjec".stop()
 		get_tree().change_scene("res://gestion/ManagementScreen/GameOver/GameOver.tscn")
+		MusicPlayer.brutalPlaySong("GameOverTheme")
 	#Lorsqu'un projectile rencontre le player, on baisse la vie etc
 	
 func _ready():

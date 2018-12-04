@@ -26,7 +26,7 @@ func _ready():
 		$VBoxContainer/Car/Container/CarRect.texture = load("res://shmup/images/Voiture_4.png")
 	
 	if playerData.songName != "MainTheme":
-		MusicPlayer.playSong("MainTheme", 0, 1, 57)
+		MusicPlayer.playSong("MainTheme", 0.1, 1, 57)
 	
 	if playerData.carParts["engine"]:
 		EngineLabel.text = "Engine : OK"

@@ -114,7 +114,7 @@ func _on_Choice2_pressed():
 
 func _on_Choice3_pressed():
 	tie.buff_clear()
-	tie.buff_text("You won against a 9 inch tall bodybuilder.\n", 0.03)
+	tie.buff_text("You won against a 9 feet tall bodybuilder.\n", 0.03)
 	tie.buff_silence(0.5)
 	tie.buff_text("One of the yellow vest starts to follow you, you won a mate.\n", 0.03)
 	playerData.crew[playerData.crew_size] = characterManagement.randomize_new_character()

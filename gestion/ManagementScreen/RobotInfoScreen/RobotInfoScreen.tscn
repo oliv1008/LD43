@@ -4,7 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://cave_story64.tres" type="DynamicFont" id=3]
 
-[node name="RobotInfoScreen" type="Control"]
+[node name="RobotInfoScreen" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -306,6 +306,7 @@ size_flags_vertical = 4
 custom_fonts/font = ExtResource( 3 )
 text = "\" BANG BANG BAAAANG \"
 								-B2O-B4"
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

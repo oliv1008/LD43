@@ -13,5 +13,8 @@ func _physics_process(delta):
 func _my_level_was_completed():
 	#playerData.nombreATuer = 5
 	playerData.currentStage += 1
+	MusicPlayer.get_node("MusicStream").volume_db = 0
+	MusicPlayer.brutalPlaySong("EventTheme")
+	#MusicPlayer.playSong("EventTheme", 0.1, 0.1, 0)
 	get_tree().change_scene("res://gestion/ManagementScreen/EventScreen/Event1/Event1.tscn")
 

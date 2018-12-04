@@ -14,7 +14,9 @@ var songs = { "Dj0" : "res://Musique/SHMUP Theme Dj=0 (loop).ogg", \
 			"Dj1" : "res://Musique/SHMUP Theme Dj=1 (loop).ogg", \
 			"Dj2" : "res://Musique/SHMUP Theme Dj=2 (loop).ogg", \
 			"Dj3" : "res://Musique/SHMUP Theme Dj=3 (loop).ogg", \
-			"MainTheme" : "res://Musique/Main Theme Floor It.ogg"}
+			"MainTheme" : "res://Musique/Main Theme Floor It.ogg", \
+			"EventTheme" : "res://Musique/EventTheme.ogg", \
+			"GameOverTheme" : "res://Musique/GameOverTheme.ogg" }
 			
 #########################	
 	
@@ -74,4 +76,11 @@ func _on_TimerOut_timeout():
 		else:
 			# Sinon on met direct la musique au bon niveau sonore
 			$MusicStream.volume_db = 0
+			
+func brutalPlaySong(name):
+	$MusicStream.stop()
+	currentSongName = name
+	song = load(songs[name])
+	$MusicStream.stream = song
+	$MusicStream.play()
 

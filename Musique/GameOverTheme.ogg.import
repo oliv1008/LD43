@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/GameOverTheme.ogg-2ad727a8894e86c114162e0e9fe0f772.oggstr"
+
+[deps]
+
+source_file="res://Musique/GameOverTheme.ogg"
+dest_files=[ "res://.import/GameOverTheme.ogg-2ad727a8894e86c114162e0e9fe0f772.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
